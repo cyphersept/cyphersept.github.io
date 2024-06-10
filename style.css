@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities {
+    
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
+  }
+};
+@layer components {
+    aside > nav > a {
+        @apply px-5 py-3 text-white rounded-lg;
+    }
+    main > section {
+        @apply snap-center snap-always;
+    }
+}
