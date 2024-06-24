@@ -4,13 +4,13 @@
 
 @layer components {
     aside a {
-        @apply inline-block align-middle py-1.5 px-6 bg-r-red-2 text-lg rounded-xl;
+        @apply inline-block w-36 align-middle py-1.5 text-center bg-r-red-2 text-lg rounded-xl;
     }
     main > section {
-        @apply snap-center snap-always;
+        @apply snap-center snap-always text-zinc-950;
     }
     main h2 {
-        @apply text-4xl text-zinc-950 mb-8;
+        @apply text-4xl mb-8;
     }
     main h3 {
         @apply text-3xl;

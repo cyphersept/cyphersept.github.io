@@ -7,37 +7,59 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="flex h-screen w-screen justify-center items-center">
-    <aside class="left flex gap-2 mr-4">
+    <aside class="left flex gap-2 mr-20">
         <h1 class="name text-3xl text-zinc-950 mb-4"></h1>
         <h3 class="tagline text-xl text-zinc-800 mb-8"></h2>
 
         <nav>
-            <ul class="flex flex-col gap-8">
+            <ul class="flex flex-col gap-8 ">
                 <li>
-                    <img src="./img/seal.svg" class="inline-block w-10 mr-4">
+                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
                     <a href="#about" class="">About Me</a>
                 </li>
                 <li>
+                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
                     <a href="#skills" class="list-image-[url(./img/knot-pink.svg)]">Experience</a>
                 </li>
                 <li>
+                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
                     <a href="#projects" class="list-image-[url(./img/knot-teal.svg)]">Projects</a>
                 </li>
                 <li>
+                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
                     <a href="#contact" class="list-image-[url(./img/knot-gold.svg)]">Contact Me</a>
                 </li>
             </ul>
         </nav>
     </aside>
 
-    <main class="right h-4/5 snap-x snap-mandatory overflow-auto">
-        <section id="about">
+    <main class="right h-[80vh] snap-x snap-mandatory overflow-auto no-scrollbar">
+        <section id="about" class="h-[80vh]">
             <h2>About</h2>
         </section>
-        <section id="Skills">
+        <section id="skills" class="h-[80vh]">
             <h2>My Skills</h2>
+            <h3>Web Development:</h3>
+            <ul>
+                <li>Building fast, functional, and compact websites with vanilla HTML, JS, and CSS</li>
+                <li>Rapid prototyping with TailwindCSS</li>
+                <li>Full stack Javascript via Node.js</li>
+                <li>Input validation and information sorting with RegEx</li>
+                <li>Experience with creating efficient single-page web utilities</li>
+            </ul>
+            <h3>Graphic Design</h3>
+            <ul>
+                <li>Dynamic image manipulation and transform matrices</li>
+                <li>SVG creation and modification</li>
+                <li>4+ years of experience in freelance illustration</li>
+            </ul>
+            <h3>Others</h3>
+            <ul>
+                <li>Native-level fluency in both Mandarin and English</li>
+                <li>Some proficiency in French</li>
+            </ul>
         </section>
-        <section id="projects">
+        <section id="projects" class="h-[80vh]">
             <nav>
                 <ul class="flex gap-2">
                     <li><a href="#repalette">repalette</a></li>
@@ -69,8 +91,12 @@
                 
             </section>
         </section>
-        <section id="contact">
+        <section id="contact" class="h-[80vh]">
             <h2>Contact Me</h2>
+            <ul>
+                <li>Native-level fluency in both Mandarin and English</li>
+                <li>Some proficiency in French</li>
+            </ul>
         </section>
     </main>
     
