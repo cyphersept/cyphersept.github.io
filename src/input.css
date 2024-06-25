@@ -9,11 +9,21 @@
     main > section {
         @apply snap-center snap-always text-zinc-950;
     }
-    main h2 {
-        @apply text-4xl mb-8;
-    }
     main h3 {
-        @apply text-3xl;
+        @apply text-2xl font-bold my-4;
+    }
+    main li {
+        margin-bottom: 4px;
+    }
+    #skills li::before {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1rem;
+        background-image: url(./img/plum.svg);
+        background-size: cover;
+        vertical-align: bottom;
     }
     .no-scrollbar::-webkit-scrollbar {
         display: none;

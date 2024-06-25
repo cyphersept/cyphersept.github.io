@@ -2,7 +2,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}", "index.html"],
   theme: {
     extend: {},
     /* https://lospec.com/palette-list/resurrect-64 */

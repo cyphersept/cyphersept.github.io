@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="./src/output.css">
 </head>
 <body class="flex h-screen w-screen justify-center items-center">
     <aside class="left flex gap-2 mr-20">
@@ -14,32 +14,32 @@
         <nav>
             <ul class="flex flex-col gap-8 ">
                 <li>
-                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
+                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
                     <a href="#about" class="">About Me</a>
                 </li>
                 <li>
-                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
+                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
                     <a href="#skills" class="list-image-[url(./img/knot-pink.svg)]">Experience</a>
                 </li>
                 <li>
-                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
+                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
                     <a href="#projects" class="list-image-[url(./img/knot-teal.svg)]">Projects</a>
                 </li>
                 <li>
-                    <img src="./img/seal.svg" class="inline-block w-10 mr-4" alt="list marker">
+                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
                     <a href="#contact" class="list-image-[url(./img/knot-gold.svg)]">Contact Me</a>
                 </li>
             </ul>
         </nav>
     </aside>
 
-    <main class="right h-[80vh] snap-x snap-mandatory overflow-auto no-scrollbar">
+    <main class="right h-[80vh] px-8 snap-x snap-mandatory overflow-auto no-scrollbar">
         <section id="about" class="h-[80vh]">
-            <h2>About</h2>
+            <h2 class="text-3xl font-bold mb-8 text-r-red-2">About</h2>
         </section>
         <section id="skills" class="h-[80vh]">
-            <h2>My Skills</h2>
-            <h3>Web Development:</h3>
+            <h2 class="text-3xl font-bold mb-8 text-r-pink-4">My Skills</h2>
+            <h3 class="">Web Development</h3>
             <ul>
                 <li>Building fast, functional, and compact websites with vanilla HTML, JS, and CSS</li>
                 <li>Rapid prototyping with TailwindCSS</li>
@@ -47,13 +47,13 @@
                 <li>Input validation and information sorting with RegEx</li>
                 <li>Experience with creating efficient single-page web utilities</li>
             </ul>
-            <h3>Graphic Design</h3>
+            <h3 class="">Graphic Design</h3>
             <ul>
-                <li>Dynamic image manipulation and transform matrices</li>
-                <li>SVG creation and modification</li>
+                <li>Vector and raster asset creation and modification</li>
+                <li>Dynamic image manipulation</li>
                 <li>4+ years of experience in freelance illustration</li>
             </ul>
-            <h3>Others</h3>
+            <h3 class="">Others</h3>
             <ul>
                 <li>Native-level fluency in both Mandarin and English</li>
                 <li>Some proficiency in French</li>
@@ -92,10 +92,16 @@
             </section>
         </section>
         <section id="contact" class="h-[80vh]">
-            <h2>Contact Me</h2>
+            <h2 class="text-3xl font-bold mb-8 text-r-orange-4">Contact Me</h2>
             <ul>
-                <li>Native-level fluency in both Mandarin and English</li>
-                <li>Some proficiency in French</li>
+                <li class="">
+                    <img src="./src/img/email-svgrepo-com.svg" width=24px height=24px alt="Email icon" class="mr-4 inline align-bottom">
+                    <a href="mailto:ygao050@gmail.com">Email</a>
+                </li>
+                <li>
+                    <img src="./src/img/github-mark.svg" width=24px height=24px alt="Github logo" class="mr-4 inline align-bottom">
+                    <a href="https://github.com/cyphersept">Github</a>
+                </li class="">
             </ul>
         </section>
     </main>
