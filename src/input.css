@@ -4,7 +4,7 @@
 
 @layer components {
     aside a {
-        @apply inline-block w-36 align-middle py-1.5 text-center bg-r-red-2 text-lg rounded-xl;
+        @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-r-gray-5;
     }
     main > section {
         @apply snap-center snap-always text-zinc-950;
@@ -24,6 +24,9 @@
         background-image: url(./img/plum.svg);
         background-size: cover;
         vertical-align: bottom;
+    }
+    .selected {
+        text-decoration-line: underline;
     }
     .no-scrollbar::-webkit-scrollbar {
         display: none;

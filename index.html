@@ -13,31 +13,32 @@
 
         <nav>
             <ul class="flex flex-col gap-8 ">
-                <li>
-                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
-                    <a href="#about" class="">About Me</a>
+                <li class="text-r-red-2">
+                    <svg id="seal" class="inline" height=40px width=40px xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="7.87 7.8 84.25 84.4">  <g>   <path fill="currentColor" d="m50 7.8125c-22.738 0-41.277 18.09-42.109 40.625h40.547v-31.184c-13.82 0.6875-26.203 10.371-29.906 23.371h22.094v-12.102c-3.6836 1.6211-6.875 4.2109-9.2695 7.4141h-3.8633l0.58594-0.87109c3.2344-4.8047 8.0703-8.4609 13.617-10.297l2.0547-0.68359v19.664h-29.152l0.40625-1.8906c3.4023-15.848 18.445-27.797 34.996-27.797 16.555 0 31.602 11.949 34.996 27.797l0.40234 1.8906h-29.148v-19.664l2.0547 0.67969c5.543 1.8359 10.383 5.4922 13.617 10.297l0.58594 0.87109h-3.8672c-2.3906-3.1992-5.582-5.7891-9.2656-7.4102v12.102h22.094c-3.6953-13-16.082-22.684-29.906-23.371v31.184h40.547c-0.83203-22.535-19.371-40.625-42.109-40.625z"></path>   <path fill="currentColor" d="m51.562 51.562v31.184c13.828-0.6875 26.211-10.371 29.906-23.371h-22.094v12.102c3.6836-1.6211 6.875-4.2109 9.2695-7.4141h3.8672l-0.58594 0.87109c-3.2344 4.8047-8.0703 8.4609-13.617 10.297l-2.0586 0.68359v-19.664h29.148l-0.40234 1.8906c-3.3945 15.848-18.441 27.797-34.996 27.797-16.551 0-31.594-11.949-34.996-27.797l-0.40625-1.8906h29.152v19.664l-2.0547-0.67969c-5.543-1.8359-10.383-5.4922-13.617-10.297l-0.58594-0.875h3.8672c2.3945 3.2031 5.5859 5.793 9.2695 7.4141l-0.003906-12.102h-22.094c3.7031 13 16.086 22.684 29.906 23.371v-31.184h-40.547c0.83203 22.535 19.371 40.625 42.109 40.625s41.277-18.09 42.109-40.625z"></path>  </g> </svg>
+                    <!-- https://thenounproject.com/icon/chinese-ornament-6716715/ -->
+                    <a href="#about" class="bg-r-red-2">About Me</a>
                 </li>
-                <li>
-                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
-                    <a href="#skills" class="list-image-[url(./img/knot-pink.svg)]">Experience</a>
+                <li class="text-r-pink-4">
+                    <svg class="inline" height=40px width=40px><use xlink:href="#seal"/></svg>
+                    <a href="#skills" class="bg-r-pink-4">Experience</a>
                 </li>
-                <li>
-                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
-                    <a href="#projects" class="list-image-[url(./img/knot-teal.svg)]">Projects</a>
+                <li class="text-r-teal-2">
+                    <svg class="inline" height=40px width=40px><use xlink:href="#seal"/></svg>
+                    <a href="#projects" class="bg-r-teal-2">Projects</a>
                 </li>
-                <li>
-                    <img src="./src/img/seal.svg" width=40px class="inline mr-4" alt="list marker">
-                    <a href="#contact" class="list-image-[url(./img/knot-gold.svg)]">Contact Me</a>
+                <li class="text-r-orange-4">
+                    <svg class="inline" height=40px width=40px><use xlink:href="#seal"/></svg>
+                    <a href="#contact" class="bg-r-orange-4">Contact Me</a>
                 </li>
             </ul>
         </nav>
     </aside>
 
     <main class="right h-[80vh] px-8 snap-x snap-mandatory overflow-auto no-scrollbar">
-        <section id="about" class="h-[80vh]">
+        <section id="about" class="min-h-[80vh] p-8">
             <h2 class="text-3xl font-bold mb-8 text-r-red-2">About</h2>
         </section>
-        <section id="skills" class="h-[80vh]">
+        <section id="skills" class="min-h-[80vh] p-8">
             <h2 class="text-3xl font-bold mb-8 text-r-pink-4">My Skills</h2>
             <h3 class="">Web Development</h3>
             <ul>
@@ -59,39 +60,58 @@
                 <li>Some proficiency in French</li>
             </ul>
         </section>
-        <section id="projects" class="h-[80vh]">
+        <section id="projects" class="min-h-[80vh] p-8">
             <nav>
                 <ul class="flex gap-2">
-                    <li><a href="#repalette">repalette</a></li>
-                    <li><a href="#doodle"></a>doodle</li>
-                    <li><a href="#rps"></a>rps</li>
-                    <li><a href="#calculate"></a>calculate</li>
-                    <li><a href="#signup"></a>signup</li>
-                    <li><a href="#dressup"></a>dressup</li>
+                    <li>
+                    <a href="#repalette" onclick="showSection(this, 'repalette')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-teal-3 bg-r-teal-3 selected">&nbsp;&nbsp;&nbsp;repalette&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="#doodle" onclick="showSection(this, 'doodle')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-mauve-4 bg-r-mauve-4">&nbsp;&nbsp;&nbsp;doodle&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="#rps" onclick="showSection(this, 'rps')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-pink-5 bg-r-pink-5">&nbsp;&nbsp;&nbsp;rps&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="#calculate" onclick="showSection(this, 'calculate')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-mauve-2 bg-r-mauve-2">&nbsp;&nbsp;&nbsp;calculate&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="#signup" onclick="showSection(this, 'signup')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-teal-3 bg-r-teal-3">&nbsp;&nbsp;&nbsp;signup&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="#dressup" onclick="showSection(this, 'dressup')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-mauve-4 bg-r-mauve-4">&nbsp;&nbsp;&nbsp;dressup&nbsp;&nbsp;&nbsp;</a>
+                    </li>
                 </ul>
             </nav>
+            
+            <h2 class="text-3xl font-bold my-8 text-r-teal-2">Projects</h2>
 
-            <section id="repalette">
+            <section id="repalette" class="not-hidden scroll-mt-36">
                 <h3>Repalette</h3>
-                <h3 class="text-xl text-zinc-800">A one-page pixel art recolouring tool</h3>
+                <div class="text-xl text-zinc-800">One-page pixel art bulk recolouring tool</div>
             </section>
-            <section id="doodle">
-
+            <section id="doodle" class="hidden scroll-mt-36">
+                <h3>Etch-a-Sketch</h3>
+                <div class="text-xl">Digital doodling</div>
             </section>
-            <section id="rps">
-
+            <section id="rps" class="hidden scroll-mt-36">
+                <h3>Rock Paper Scissors</h3>
+                <div class="text-xl">Best of three</div>
             </section>
-            <section id="calculate">
-
+            <section id="calculate" class="hidden scroll-mt-36">
+                <h3>Calculator</h3>
+                <div class="text-xl">Classic four function calculator, like you used to have</div>
             </section>
-            <section id="signup">
-
+            <section id="signup" class="hidden scroll-mt-36">
+                <h3>Signup Page</h3>
+                <div class="text-xl">Create an account for a totally real service</div>
             </section>
-            <section id="dressup">
-                
+            <section id="dressup" class="hidden scroll-mt-36">
+                <h3>Dressup Game Maker (WIP)</h3>
+                <div class="text-xl">Lightweight app for creating HTML paperdolls with zero code</div>                
             </section>
         </section>
-        <section id="contact" class="h-[80vh]">
+        <section id="contact" class="min-h-[80vh] p-8">
             <h2 class="text-3xl font-bold mb-8 text-r-orange-4">Contact Me</h2>
             <ul>
                 <li class="">
@@ -105,6 +125,42 @@
             </ul>
         </section>
     </main>
-    
 </body>
+<script>
+    function showSection(nav, id, ancestorId="projects") {
+        const ancestor = document.getElementById(ancestorId);
+        const prev = ancestor.querySelector(".not-hidden");
+        const next = document.getElementById(id);
+
+        // Hides all but selected section
+        prev.classList.remove("not-hidden");
+        prev.classList.add("hidden");
+        next.classList.add("not-hidden");
+        next.classList.remove("hidden");
+
+        // Selects element in nav
+        ancestor.querySelector(".selected").classList.remove("selected");
+        nav.classList.add("selected");
+    }
+
+    // $(document).on('click', 'a[href^="#"]', function (event) {
+    //     event.preventDefault();
+
+    //     $('html, body').animate({
+    //         scrollTop: $($.attr(this, 'href')).offset().top
+    //     }, 500);
+    // });
+
+/*  TO-DO:
+    - setup jquery
+    - smooth scroll animations
+
+    - record demo gifs
+    - add and style links to page and source code, lazy embed??
+
+    - host old projects
+
+    - create illustrations
+*/
+</script>
 </html>
