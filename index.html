@@ -34,7 +34,7 @@
         </nav>
     </aside>
 
-    <main class="right h-[80vh] px-8 snap-x snap-mandatory overflow-auto no-scrollbar">
+    <main class="right h-[80vh] px-8 snap-y snap-mandatory scroll-smooth overflow-auto no-scrollbar">
         <section id="about" class="min-h-[80vh] p-8">
             <h2 class="text-3xl font-bold mb-8 text-r-red-2">About</h2>
         </section>
@@ -60,8 +60,8 @@
                 <li>Some proficiency in French</li>
             </ul>
         </section>
-        <section id="projects" class="min-h-[80vh] p-8">
-            <nav>
+        <section id="projects" class="min-h-[80vh] h-[80vh] p-8 relative">
+            <nav class="absolute">
                 <ul class="flex gap-2">
                     <li>
                     <a href="#repalette" onclick="showSection(this, 'repalette')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-teal-3 bg-r-teal-3 selected">&nbsp;&nbsp;&nbsp;repalette&nbsp;&nbsp;&nbsp;</a>
@@ -83,32 +83,34 @@
                     </li>
                 </ul>
             </nav>
-            
-            <h2 class="text-3xl font-bold my-8 text-r-teal-2">Projects</h2>
 
-            <section id="repalette" class="not-hidden scroll-mt-36">
-                <h3>Repalette</h3>
-                <div class="text-xl text-zinc-800">One-page pixel art bulk recolouring tool</div>
+            <section id="repalette" class="flex scroll-mt-36 h-full flex-col">
+                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Repalette</h2>
+                <h3 class="text-xl my-2">One-page pixel art bulk recolouring tool</h3>
             </section>
-            <section id="doodle" class="hidden scroll-mt-36">
-                <h3>Etch-a-Sketch</h3>
-                <div class="text-xl">Digital doodling</div>
+            <section id="doodle" class="hidden scroll-mt-36 h-full flex-col">
+                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Etch-a-Sketch</h2>
+                <h3 class="text-xl my-2">Digital doodling</h3>
+                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
             </section>
-            <section id="rps" class="hidden scroll-mt-36">
-                <h3>Rock Paper Scissors</h3>
-                <div class="text-xl">Best of three</div>
+            <section id="rps" class="hidden scroll-mt-36 h-full flex-col">
+                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Rock Paper Scissors</h2>
+                <h3 class="text-xl my-2">Best of three</h3>
+                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/rps" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
             </section>
-            <section id="calculate" class="hidden scroll-mt-36">
-                <h3>Calculator</h3>
-                <div class="text-xl">Classic four function calculator, like you used to have</div>
+            <section id="calculate" class="hidden scroll-mt-36 h-full flex-col">
+                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Calculator</h2>
+                <h3 class="text-xl my-2">Classic four function calculator, like you used to have</h3>
+                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/calculator" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
             </section>
-            <section id="signup" class="hidden scroll-mt-36">
-                <h3>Signup Page</h3>
-                <div class="text-xl">Create an account for a totally real service</div>
+            <section id="signup" class="hidden scroll-mt-36 h-full flex-col">
+                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Signup Page</h2>
+                <h3 class="text-xl my-2">Create an account for a totally real service</h3>
+                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/signup" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
             </section>
-            <section id="dressup" class="hidden scroll-mt-36">
-                <h3>Dressup Game Maker (WIP)</h3>
-                <div class="text-xl">Lightweight app for creating HTML paperdolls with zero code</div>                
+            <section id="dressup" class="hidden scroll-mt-36 h-full flex-col">
+                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Dressup Game Maker (WIP)</h2>
+                <h3 class="text-xl my-2">Lightweight app for creating HTML paperdolls with zero code</div>            h3 
             </section>
         </section>
         <section id="contact" class="min-h-[80vh] p-8">
@@ -129,13 +131,13 @@
 <script>
     function showSection(nav, id, ancestorId="projects") {
         const ancestor = document.getElementById(ancestorId);
-        const prev = ancestor.querySelector(".not-hidden");
+        const prev = ancestor.querySelector("section.flex");
         const next = document.getElementById(id);
 
         // Hides all but selected section
-        prev.classList.remove("not-hidden");
+        prev.classList.remove("flex");
         prev.classList.add("hidden");
-        next.classList.add("not-hidden");
+        next.classList.add("flex");
         next.classList.remove("hidden");
 
         // Selects element in nav
@@ -152,15 +154,16 @@
     // });
 
 /*  TO-DO:
-    - setup jquery
-    - smooth scroll animations
+    - https://www.youtube.com/watch?v=UmzFk68Bwdk use for scroll animations? else jquery
 
     - record demo gifs
     - add and style links to page and source code, lazy embed??
 
-    - host old projects
-
     - create illustrations
+
+    FINISHED:
+    - smooth scroll animations
+    - host old projects
 */
 </script>
 </html>

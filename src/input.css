@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    iframe {
+        --scalar: 1;
+        transform: scale(var(--scalar));
+        transform-origin: top left;
+        width: calc(1/var(--scalar) * 100%);
+        height: calc(1/var(--scalar) * 100%);
+    }
+}
 @layer components {
     aside a {
         @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-r-gray-5;
     }
     main > section {
         @apply snap-center snap-always text-zinc-950;
-    }
-    main h3 {
-        @apply text-2xl font-bold my-4;
     }
     main li {
         margin-bottom: 4px;
@@ -25,14 +31,59 @@
         background-size: cover;
         vertical-align: bottom;
     }
+
     .selected {
         text-decoration-line: underline;
     }
+
     .no-scrollbar::-webkit-scrollbar {
         display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none; 
+            scrollbar-width: none;
     }
-    .no-scrollbar {
-        -ms-overflow-style: none; 
-        scrollbar-width: none;
+
+    .hoverline {
+        position: relative;
+        }
+        
+        .hoverline::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        background-color: inherit;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        }
+        
+        .hoverline:hover::before {
+        transform: scaleX(1);
     }
+    
+    .skinny-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: var(--c2) var(--c1);
+    }
+    
+    /* Chrome, Edge, and Safari */
+    .skinny-scroll::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 5px;
+    }
+    
+    .skinny-scroll::-webkit-scrollbar-track {
+        background: var(--c1);
+        border-radius: 5px;
+    }
+    
+    .skinny-scroll::-webkit-scrollbar-thumb {
+        background-color: var(--c2);
+        border-radius: 5px;
+    }
+      
 }
