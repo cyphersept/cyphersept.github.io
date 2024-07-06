@@ -13,10 +13,10 @@
 }
 @layer components {
     aside a {
-        @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-r-gray-5;
+        @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-gray-1;
     }
     main > section {
-        @apply snap-center snap-always text-zinc-950;
+        @apply snap-center snap-alwaysd;
     }
     main li {
         margin-bottom: 4px;
@@ -31,9 +31,15 @@
         background-size: cover;
         vertical-align: bottom;
     }
-
-    .selected {
-        text-decoration-line: underline;
+    #projects h1 a::after {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-left: 0.25rem;
+        background-image: url(./img/external-link-svgrepo-com.svg);
+        background-size: cover;
+        vertical-align: bottom;
     }
 
     .no-scrollbar::-webkit-scrollbar {
@@ -48,42 +54,26 @@
         position: relative;
         }
         
-        .hoverline::before {
+        .hoverline::before, .selected::before {
         content: "";
         position: absolute;
         display: block;
         width: 100%;
+        border-radius: 8px;
         height: 4px;
-        bottom: 0;
+        bottom: -8px;
         left: 0;
         background-color: inherit;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
+        }
+
+        .hoverline::before {
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
         }
         
-        .hoverline:hover::before {
+        .hoverline:hover::before, .selected::before {
         transform: scaleX(1);
-    }
-    
-    .skinny-scroll {
-        scrollbar-width: thin;
-        scrollbar-color: var(--c2) var(--c1);
-    }
-    
-    /* Chrome, Edge, and Safari */
-    .skinny-scroll::-webkit-scrollbar {
-        width: 10px;
-        border-radius: 5px;
-    }
-    
-    .skinny-scroll::-webkit-scrollbar-track {
-        background: var(--c1);
-        border-radius: 5px;
-    }
-    
-    .skinny-scroll::-webkit-scrollbar-thumb {
-        background-color: var(--c2);
-        border-radius: 5px;
     }
       
 }

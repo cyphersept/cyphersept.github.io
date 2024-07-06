@@ -3,128 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Yuan Gao — Junior Web Developer </title>
     <link rel="stylesheet" href="./src/output.css">
 </head>
-<body class="flex h-screen w-screen justify-center items-center">
-    <aside class="left flex gap-2 mr-20">
-        <h1 class="name text-3xl text-zinc-950 mb-4"></h1>
-        <h3 class="tagline text-xl text-zinc-800 mb-8"></h2>
-
+<body class="flex h-screen min-h-fit w-full min-w-fit justify-center items-center font-serif text-zinc-800">
+    <aside class="left flex flex-col">
+        <h1 class="name text-3xl text-zinc-950 font-bold mb-2 text-right">Yuan Gao</h1>
+        <h3 class="tagline text-xl mb-10 text-right">Junior Web Developer</h3>
         <nav>
-            <ul class="flex flex-col gap-8 ">
-                <li class="text-r-red-2">
+            <ul class="flex flex-col gap-5">
+                <li class="text-red-3 text-nowrap">
                     <svg id="seal" class="inline" height=40px width=40px xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="7.87 7.8 84.25 84.4">  <g>   <path fill="currentColor" d="m50 7.8125c-22.738 0-41.277 18.09-42.109 40.625h40.547v-31.184c-13.82 0.6875-26.203 10.371-29.906 23.371h22.094v-12.102c-3.6836 1.6211-6.875 4.2109-9.2695 7.4141h-3.8633l0.58594-0.87109c3.2344-4.8047 8.0703-8.4609 13.617-10.297l2.0547-0.68359v19.664h-29.152l0.40625-1.8906c3.4023-15.848 18.445-27.797 34.996-27.797 16.555 0 31.602 11.949 34.996 27.797l0.40234 1.8906h-29.148v-19.664l2.0547 0.67969c5.543 1.8359 10.383 5.4922 13.617 10.297l0.58594 0.87109h-3.8672c-2.3906-3.1992-5.582-5.7891-9.2656-7.4102v12.102h22.094c-3.6953-13-16.082-22.684-29.906-23.371v31.184h40.547c-0.83203-22.535-19.371-40.625-42.109-40.625z"></path>   <path fill="currentColor" d="m51.562 51.562v31.184c13.828-0.6875 26.211-10.371 29.906-23.371h-22.094v12.102c3.6836-1.6211 6.875-4.2109 9.2695-7.4141h3.8672l-0.58594 0.87109c-3.2344 4.8047-8.0703 8.4609-13.617 10.297l-2.0586 0.68359v-19.664h29.148l-0.40234 1.8906c-3.3945 15.848-18.441 27.797-34.996 27.797-16.551 0-31.594-11.949-34.996-27.797l-0.40625-1.8906h29.152v19.664l-2.0547-0.67969c-5.543-1.8359-10.383-5.4922-13.617-10.297l-0.58594-0.875h3.8672c2.3945 3.2031 5.5859 5.793 9.2695 7.4141l-0.003906-12.102h-22.094c3.7031 13 16.086 22.684 29.906 23.371v-31.184h-40.547c0.83203 22.535 19.371 40.625 42.109 40.625s41.277-18.09 42.109-40.625z"></path>  </g> </svg>
                     <!-- https://thenounproject.com/icon/chinese-ornament-6716715/ -->
-                    <a href="#about" class="bg-r-red-2">About Me</a>
+                    <a href="#about" class="bg-red-3 hoverline">About Me</a>
                 </li>
-                <li class="text-r-pink-4">
+                <li class="text-pink-3 text-nowrap">
                     <svg class="inline" height=40px width=40px><use xlink:href="#seal"/></svg>
-                    <a href="#skills" class="bg-r-pink-4">Experience</a>
+                    <a href="#skills" class="bg-pink-3 hoverline">Experience</a>
                 </li>
-                <li class="text-r-teal-2">
+                <li class="text-teal-4 text-nowrap">
                     <svg class="inline" height=40px width=40px><use xlink:href="#seal"/></svg>
-                    <a href="#projects" class="bg-r-teal-2">Projects</a>
+                    <a href="#projects" class="bg-teal-4 hoverline">Projects</a>
                 </li>
-                <li class="text-r-orange-4">
+                <li class="text-orange-2 text-nowrap">
                     <svg class="inline" height=40px width=40px><use xlink:href="#seal"/></svg>
-                    <a href="#contact" class="bg-r-orange-4">Contact Me</a>
+                    <a href="#contact" class="bg-orange-2 hoverline">Contact Me</a>
                 </li>
             </ul>
         </nav>
     </aside>
 
-    <main class="right h-[80vh] px-8 snap-y snap-mandatory scroll-smooth overflow-auto no-scrollbar">
-        <section id="about" class="min-h-[80vh] p-8">
-            <h2 class="text-3xl font-bold mb-8 text-r-red-2">About</h2>
+    <div class="spacer shrink w-20 h-full overflow-hidden"></div>
+
+    <main class="right h-[80vh] min-w-[36rem] shrink w-[50vw] px-8 snap-y snap-mandatory scroll-smooth overflow-y-scroll no-scrollbar">
+        <section id="about" class="min-h-full p-8">
+            <h1 class="text-3xl font-bold mb-8 text-red-3">About</h1>
+                        <div class="text-xl font-sans">I'm a Montreal-based web developer with a keen interest in what makes the internet tick. With my background in freelance illustration, I combine sharp visuals with user-friendly functionality to deliver unique utilities via the convenience of the world wide web.</div>
         </section>
-        <section id="skills" class="min-h-[80vh] p-8">
-            <h2 class="text-3xl font-bold mb-8 text-r-pink-4">My Skills</h2>
-            <h3 class="">Web Development</h3>
-            <ul>
-                <li>Building fast, functional, and compact websites with vanilla HTML, JS, and CSS</li>
+        <section id="skills" class="min-h-full p-8 text-xl">
+            <h1 class="text-3xl font-bold mb-8 text-pink-3">My Skills</h1>
+            <h3 class="font-bold text-2xl mt-4 mb-2">Web Development</h3>
+            <ul class="font-sans">
+                <li>Bachelor's degree in computer science</li>
+                <li>Building compact websites with vanilla HTML, JS, and CSS</li>
                 <li>Rapid prototyping with TailwindCSS</li>
                 <li>Full stack Javascript via Node.js</li>
-                <li>Input validation and information sorting with RegEx</li>
                 <li>Experience with creating efficient single-page web utilities</li>
             </ul>
-            <h3 class="">Graphic Design</h3>
-            <ul>
+            <h3 class="font-bold text-2xl mt-4 mb-2">Graphic Design</h3>
+            <ul class="font-sans">
                 <li>Vector and raster asset creation and modification</li>
                 <li>Dynamic image manipulation</li>
                 <li>4+ years of experience in freelance illustration</li>
             </ul>
-            <h3 class="">Others</h3>
-            <ul>
+            <h3 class="font-bold text-2xl mt-4 mb-2">Others</h3>
+            <ul class="font-sans">
                 <li>Native-level fluency in both Mandarin and English</li>
+                <li>Document writing, editing, and translation</li>
                 <li>Some proficiency in French</li>
             </ul>
         </section>
-        <section id="projects" class="min-h-[80vh] h-[80vh] p-8 relative">
+        <section id="projects" class="min-h-[34rem] h-full p-8 relative flex flex-col">
             <nav class="absolute">
                 <ul class="flex gap-2">
                     <li>
-                    <a href="#repalette" onclick="showSection(this, 'repalette')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-teal-3 bg-r-teal-3 selected">&nbsp;&nbsp;&nbsp;repalette&nbsp;&nbsp;&nbsp;</a>
+                    <a href="#repalette" onclick="showSection(this, 'repalette')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-teal-3 selected">&nbsp;&nbsp;&nbsp;repalette&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#doodle" onclick="showSection(this, 'doodle')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-mauve-4 bg-r-mauve-4">&nbsp;&nbsp;&nbsp;doodle&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#doodle" onclick="showSection(this, 'doodle')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;doodle&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#rps" onclick="showSection(this, 'rps')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-pink-5 bg-r-pink-5">&nbsp;&nbsp;&nbsp;rps&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#rps" onclick="showSection(this, 'rps')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-pink-2">&nbsp;&nbsp;&nbsp;rps&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#calculate" onclick="showSection(this, 'calculate')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-mauve-2 bg-r-mauve-2">&nbsp;&nbsp;&nbsp;calculate&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#calculate" onclick="showSection(this, 'calculate')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-3">&nbsp;&nbsp;&nbsp;calculate&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#signup" onclick="showSection(this, 'signup')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-teal-3 bg-r-teal-3">&nbsp;&nbsp;&nbsp;signup&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#signup" onclick="showSection(this, 'signup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-teal-3">&nbsp;&nbsp;&nbsp;signup&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#dressup" onclick="showSection(this, 'dressup')" class="rounded-xl text-r-gray-5 pt-1 pb-2 hover:underline decoration-4 underline-offset-[1em] decoration-r-mauve-4 bg-r-mauve-4">&nbsp;&nbsp;&nbsp;dressup&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#dressup" onclick="showSection(this, 'dressup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;dressup&nbsp;&nbsp;&nbsp;</a>
                     </li>
                 </ul>
             </nav>
 
             <section id="repalette" class="flex scroll-mt-36 h-full flex-col">
-                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Repalette</h2>
-                <h3 class="text-xl my-2">One-page pixel art bulk recolouring tool</h3>
+                <h1 class="text-3xl font-bold mt-14 text-teal-4">Projects — 
+                    <a href="https://cyphersept.github.io/repalette" target="_blank" rel="noopener" class="underline">Repalette</a></h1>
+                <h3 class="text-xl my-2">One-page pixel art bulk recolouring tool
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/repalette">Source</a>)</h3>
+                <div class="grow text-center">
+                    <div class="flex"><img src="./src/img/repalette-demo.gif" alt="Example gif" loading="lazy" class="rounded-xl object-scale-down"></div>
+                </div>
             </section>
+
             <section id="doodle" class="hidden scroll-mt-36 h-full flex-col">
-                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Etch-a-Sketch</h2>
-                <h3 class="text-xl my-2">Digital doodling</h3>
-                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
+                <h1 class="text-3xl font-bold mt-14 text-teal-4">Projects — 
+                    <a href="https://cyphersept.github.io/small-projects/etch" target="_blank" rel="noopener" class="underline">Etch-a-Sketch</a></h1>
+                <h3 class="text-xl my-2">Digital doodling
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/etch">Source</a>)</h3>
+                <div class="grow">
+                    <iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
+                </div>
             </section>
+
             <section id="rps" class="hidden scroll-mt-36 h-full flex-col">
-                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Rock Paper Scissors</h2>
-                <h3 class="text-xl my-2">Best of three</h3>
-                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/rps" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
+                <h1 class="text-3xl font-bold mt-14 text-teal-4">Projects — 
+                    <a href="https://cyphersept.github.io/small-projects/rps" target="_blank" rel="noopener" class="underline">Rock Paper Scissors</a></h1>
+                <h3 class="text-xl my-2">Best of three
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/rps">Source</a>)</h3>
+                <div class="grow">
+                    <iframe src="https://cyphersept.github.io/small-projects/rps" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
+                </div>
             </section>
+
             <section id="calculate" class="hidden scroll-mt-36 h-full flex-col">
-                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Calculator</h2>
-                <h3 class="text-xl my-2">Classic four function calculator, like you used to have</h3>
-                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/calculator" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
+                <h1 class="text-3xl font-bold mt-14 text-teal-4">Projects — 
+                    <a href="https://cyphersept.github.io/small-projects/calculator" target="_blank" rel="noopener" class="underline">Calculator</a></h1>
+                <h3 class="text-xl my-2">Classic four function calculator, like you used to have
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/calculator">Source</a>)</h3>
+                <div class="grow">
+                    <iframe src="https://cyphersept.github.io/small-projects/calculator" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
+                </div>
             </section>
+
             <section id="signup" class="hidden scroll-mt-36 h-full flex-col">
-                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Signup Page</h2>
-                <h3 class="text-xl my-2">Create an account for a totally real service</h3>
-                <div class="grow"><iframe src="https://cyphersept.github.io/small-projects/signup" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe></div>
+                <h1 class="text-3xl font-bold mt-14 text-teal-4">Projects — 
+                    <a href="https://cyphersept.github.io/small-projects/signup" target="_blank" rel="noopener" class="underline">Signup Page</a></h1>
+                <h3 class="text-xl my-2">Create an account for a totally real service
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/signup">Source</a>)</h3>
+                <div class="grow">
+                    <iframe src="https://cyphersept.github.io/small-projects/signup" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.6" class="rounded-xl"></iframe>
+                </div>
             </section>
+
             <section id="dressup" class="hidden scroll-mt-36 h-full flex-col">
-                <h2 class="text-3xl font-bold mt-14 text-r-teal-2">Projects — Dressup Game Maker (WIP)</h2>
-                <h3 class="text-xl my-2">Lightweight app for creating HTML paperdolls with zero code</div>            h3 
+                <h1 class="text-3xl font-bold mt-14 text-teal-4">Projects — Dressup Game Maker (WIP)</h1>
+                <h3 class="text-xl my-2">Lightweight app for creating HTML paperdolls with zero code (<a class="underline text-teal-4" href="https://github.com/cyphersept/dressup-maker">Source</a>)</div>
             </section>
         </section>
-        <section id="contact" class="min-h-[80vh] p-8">
-            <h2 class="text-3xl font-bold mb-8 text-r-orange-4">Contact Me</h2>
-            <ul>
-                <li class="">
-                    <img src="./src/img/email-svgrepo-com.svg" width=24px height=24px alt="Email icon" class="mr-4 inline align-bottom">
-                    <a href="mailto:ygao050@gmail.com">Email</a>
-                </li>
-                <li>
-                    <img src="./src/img/github-mark.svg" width=24px height=24px alt="Github logo" class="mr-4 inline align-bottom">
-                    <a href="https://github.com/cyphersept">Github</a>
-                </li class="">
-            </ul>
+        <section id="contact" class="min-h-full p-8">
+            <h1 class="text-3xl font-bold mb-8 text-orange-2">Contact Me</h1>
+                <a href="mailto:ygao050@gmail.com" class="pl-6 py-3 w-40 text-lg rounded-xl block bg-orange-1 text-white font-semibold mb-4">
+                    <img src="./src/img/email-8-svgrepo-com.svg" width=24px height=24px alt="Email icon" class="mr-3 inline align-text-top"> Email
+                </a>
+                <a href="https://github.com/cyphersept" class="pl-6 py-3 w-40 text-lg rounded-xl block bg-orange-2 text-white font-semibold mb-4">
+                    <img src="./src/img/github-mark-white.svg" width=24px height=24px alt="Github logo" class="mr-3 inline align-text-bottom"> Github
+                </a>
         </section>
     </main>
 </body>
@@ -155,13 +180,13 @@
 
 /*  TO-DO:
     - https://www.youtube.com/watch?v=UmzFk68Bwdk use for scroll animations? else jquery
-
+    - create illustrations
+    - change scrollbars in embeds (signup, calc)
+    - replace signup image with compressed
+    
+    FINISHED:
     - record demo gifs
     - add and style links to page and source code, lazy embed??
-
-    - create illustrations
-
-    FINISHED:
     - smooth scroll animations
     - host old projects
 */
