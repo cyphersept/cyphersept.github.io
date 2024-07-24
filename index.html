@@ -155,6 +155,25 @@
     </main>
 </body>
 <script>
+    const main = document.querySelector('main.right');
+    const sections = [
+        {
+            bg: './src/img/winter.svg',
+            threshold: 0},
+        {
+            bg: './src/img/spring.svg',
+            get threshold() { return document.getElementById('skills').offsetTop }},
+        {
+            bg: './src/img/summer.svg',
+            get threshold() { return document.getElementById('projects').offsetTop }},
+        {
+            bg: './src/img/autumn.svg',
+            get threshold() { return document.getElementById('contact').offsetTop }},
+        {   
+            get threshold () { return main.innerHeight }}
+    ]
+
+    // Project section links
     function showSection(nav, id, ancestorId="projects") {
         const ancestor = document.getElementById(ancestorId);
         const prev = ancestor.querySelector("section.flex");
@@ -179,17 +198,65 @@
     //     }, 500);
     // });
 
+    // Main nav jump anchor links
     document.querySelectorAll('.left a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
-        const target = document.getElementById(targetId);
-        
-        // Scroll the inner element
-        document.querySelector('.right').scrollTop = target.offsetTop;
+            const targetId = this.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            
+            // Scroll the inner element
+            main.scrollTop = target.offsetTop;
+        });
     });
-});
+
+    function setBg() {
+        let scrollPos = main.scrollTop;
+        for (let i = 0; i < 3; i++) {
+            if (scrollPos < sections[i+1].threshold) {
+                const   bgStyle = document.querySelector('body').style.backgroundImage;
+                        body = document.querySelector('body')
+                        start = sections[i].threshold,
+                        next = sections[i+1].threshold,
+                        distance = next - start,
+                        fadeOutStart = 0.8 * distance + start,
+                        change = 0.9 * distance + start;
+                
+                // Set background if it has not 
+                bgStyle = `url(${sections[i].bg})`;
+
+                // Calculate opacity for ::after element
+                let opacity = 0;
+                if (scrollPos > fadeOutStart && scrollPos <= change) {
+                    const t = (scrollPos - fadeOutStart) / (change - fadeOutStart);
+                    opacity = cubicBezier(t, 0.42, 0, 0.58, 1);
+
+                } else if (scrollPos > change && scrollPos <= next) {
+                    document.querySelector('body').style.backgroundImage = `url(${sections[i+1].bg})`;
+                    const t = (scrollPos - change) / (next - change);
+                    opacity = 1 - cubicBezier(t, 0.42, 0, 0.58, 1); 
+                }
+                break;
+        }
+    }
+
+    function cubicBezier(t, p0, p1, p2, p3) {
+        // Calculate intermediate points
+        const px = p1 - p0 * t;
+        const py = p2 - p1 * t;
+
+        // Calculate final position
+        const qx = p3 - px * t;
+        const qy = p3 - py * t;
+
+        // Return the final position
+        return qy + py * t + px * t * t + p0 * t * t * t;
+    }
+
+    // Background change on scroll
+    main.addEventListener('scroll', setBg);
+    document.onload = setBg;
 
 
 /*  TO-DO:
