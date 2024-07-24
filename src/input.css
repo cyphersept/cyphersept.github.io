@@ -15,8 +15,20 @@
     aside a {
         @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-gray-1;
     }
-    main > section {
-        @apply snap-center snap-alwaysd;
+    .right {
+        position: absolute; /* Assuming absolute positioning based on the context */
+        top: max(21.75%);
+        left: max(385px, 37.25%, 58.75vh);
+        /* height: 100%;
+        width: 100%;
+        padding-top: 13.75%;
+        margin-top: -13.75%;
+        padding-bottom: 52.5%;
+        margin-bottom: -52.5%;
+        padding-left: 38.75%;
+        margin-left: -38.75%;
+        padding-right: 33.5%;
+        margin-right: -33.5%; */
     }
     main li {
         margin-bottom: 4px;
@@ -74,6 +86,23 @@
         
         .hoverline:hover::before, .selected::before {
         transform: scaleX(1);
+    }
+
+    body {
+        transition: background-image 0.5s ease-out;
+    }
+
+    .fade-wipe {
+        animation: fadeWipe 0.5s forwards;
+    }
+
+    .unfade-wipe {
+        animation: fadeIn 2s backwards;
+      }
+
+    @keyframes fadeWipe {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 0% 100%; }
     }
       
 }

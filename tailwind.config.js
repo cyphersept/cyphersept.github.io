@@ -10,7 +10,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       zinc: colors.zinc,
-      'white': '#ffffff',
+      'white': '#fff9f3',
       'brown': {
         5: '#2e222f',
         4: '#3e3546',
