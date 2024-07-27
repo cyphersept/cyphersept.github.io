@@ -92,7 +92,7 @@
         --opacity: 0;
         transition: background-image 0.5s ease-out;
     }
-    body::after {
+    body::after{
         content: "";
         position: absolute;
         bottom: 0;
@@ -102,6 +102,7 @@
         z-index: -1;
         background-color: theme('colors.white');
         opacity: var(--opacity);
+        transition: background 1s ease-in;
     }
 
     .fade-wipe {
