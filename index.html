@@ -6,7 +6,7 @@
     <title>Yuan Gao — Junior Web Developer </title>
     <link rel="stylesheet" href="./src/output.css">
 </head>
-<body class="h-screen min-h-[max(62.5vw,656px)] w-full min-w-[1000px] justify-center items-center font-serif text-brown-5 bg-white bg-[url('./img/winter.svg')] bg-left bg-cover relative">
+<body class="h-screen min-h-[max(62.5vw,656px)] w-full min-w-[1000px] justify-center items-center font-serif text-brown-5 bg-white bg-left bg-cover relative">
     <aside class="left flex flex-col items-end w-[max(13rem,18%)] sticky top-[45vh] ml-6 translate-y-[-50%]">
         <h1 class="name text-4xl text-brown-5 font-bold mb-4 text-right">Yuan Gao</h1>
         <h3 class="tagline text-2xl mb-16 text-right">Web Developer</h3>
@@ -168,9 +168,7 @@
             get threshold() { return document.getElementById('projects').offsetTop }},
         {
             bg: './src/img/autumn.svg',
-            get threshold() { return document.getElementById('contact').offsetTop }},
-        {   
-            get threshold () { return main.innerHeight }}
+            get threshold() { return document.getElementById('contact').offsetTop }}
     ]
 
     // Project section links
@@ -213,31 +211,35 @@
 
     function setBg() {
         let scrollPos = main.scrollTop;
-        for (let i = 0; i < 3; i++) {
-            if (scrollPos < sections[i+1].threshold) {
-                const   bgStyle = document.querySelector('body').style.backgroundImage;
-                        body = document.querySelector('body')
+        for (let i = 3; i >= 0 ; i--) {
+            if (scrollPos > sections[i].threshold) {
+                const   body = document.querySelector('body')
+                        newBg = `url(${sections[i].bg})`
                         start = sections[i].threshold,
                         next = sections[i+1].threshold,
                         distance = next - start,
-                        fadeOutStart = 0.8 * distance + start,
-                        change = 0.9 * distance + start;
-                
-                // Set background if it has not 
-                bgStyle = `url(${sections[i].bg})`;
+                        fadeOutStart = 0.7 * distance + start,
+                        change = 0.85 * distance + start;
 
                 // Calculate opacity for ::after element
                 let opacity = 0;
+                // Fade out previous bg 
                 if (scrollPos > fadeOutStart && scrollPos <= change) {
                     const t = (scrollPos - fadeOutStart) / (change - fadeOutStart);
                     opacity = cubicBezier(t, 0.42, 0, 0.58, 1);
-
+                // Change and fade in new bg
                 } else if (scrollPos > change && scrollPos <= next) {
-                    document.querySelector('body').style.backgroundImage = `url(${sections[i+1].bg})`;
+                    body.style.backgroundImage = `url(${sections[i+1].bg})`;
                     const t = (scrollPos - change) / (next - change);
                     opacity = 1 - cubicBezier(t, 0.42, 0, 0.58, 1); 
                 }
+                // Change if before transition point and bg doesn't match current section
+                else if (body.style.backgroundImage !== newBg) {
+                    body.style.backgroundImage = newBg;
+                }
+                body.style.setProperty("--opacity", opacity);
                 break;
+            }
         }
     }
 
