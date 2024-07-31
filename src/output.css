@@ -579,19 +579,8 @@ aside a {
 
 .right {
   position: absolute;
-  /* Assuming absolute positioning based on the context */
-  top: max(21.75%);
-  left: max(385px, 37.25%, 58.75vh);
-  /* height: 100%;
-        width: 100%;
-        padding-top: 13.75%;
-        margin-top: -13.75%;
-        padding-bottom: 52.5%;
-        margin-bottom: -52.5%;
-        padding-left: 38.75%;
-        margin-left: -38.75%;
-        padding-right: 33.5%;
-        margin-right: -33.5%; */
+  /* top: max(21.75%);
+        left: max(385px, 37.25%, 58.75vh); */
 }
 
 main li {
@@ -655,32 +644,32 @@ main li {
   transform: scaleX(1);
 }
 
-body {
-  --opacity: 0;
-  transition: background-image 0.5s ease-out;
-}
-
-body::after{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: -1;
-  background-color: #fff9f3;
-  opacity: var(--opacity);
-  transition: background 1s ease-in;
-}
-
-@keyframes fadeWipe {
-  0% {
-    background-position: 0% 0%;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
 
-  100% {
-    background-position: 0% 100%;
+  to {
+    opacity: 0;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
 }
 
 .absolute {
@@ -695,12 +684,32 @@ body::after{
   position: sticky;
 }
 
+.left-\[50\%\] {
+  left: 50%;
+}
+
 .top-14 {
   top: 3.5rem;
 }
 
+.top-\[21\.75\%\] {
+  top: 21.75%;
+}
+
 .top-\[45vh\] {
   top: 45vh;
+}
+
+.left-\[calc\(50\%_-_22vh\)\] {
+  left: calc(50% - 22vh);
+}
+
+.left-\[calc\(50\%_-_21\.2vh\)\] {
+  left: calc(50% - 21.2vh);
+}
+
+.left-\[calc\(50\%_-_21vh\)\] {
+  left: calc(50% - 21vh);
 }
 
 .my-2 {
@@ -768,8 +777,8 @@ body::after{
   height: 100vh;
 }
 
-.min-h-\[max\(62\.5vw\2c 656px\)\] {
-  min-height: max(62.5vw,656px);
+.min-h-\[656px\] {
+  min-height: 656px;
 }
 
 .min-h-full {
@@ -784,6 +793,10 @@ body::after{
   width: 10rem;
 }
 
+.w-\[46\.75vh\] {
+  width: 46.75vh;
+}
+
 .w-\[calc\(100\%-2rem\)\] {
   width: calc(100% - 2rem);
 }
@@ -792,16 +805,8 @@ body::after{
   width: max(13rem,18%);
 }
 
-.w-\[max\(307\.5px\2c 29\.33vw\)\] {
-  width: max(307.5px,29.33vw);
-}
-
 .w-full {
   width: 100%;
-}
-
-.min-w-\[1000px\] {
-  min-width: 1000px;
 }
 
 .shrink {
@@ -814,10 +819,6 @@ body::after{
 
 .translate-y-\[-50\%\] {
   --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -859,10 +860,6 @@ body::after{
 
 .items-end {
   align-items: flex-end;
-}
-
-.items-center {
-  align-items: center;
 }
 
 .justify-center {
@@ -951,12 +948,20 @@ body::after{
   background-image: url('./img/winter.svg');
 }
 
+.bg-\[auto_100\%\] {
+  background-size: auto 100%;
+}
+
 .bg-cover {
   background-size: cover;
 }
 
-.bg-left {
-  background-position: left;
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .object-scale-down {
@@ -1094,22 +1099,30 @@ body::after{
   text-decoration-line: underline;
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.opacity-0 {
+  opacity: 0;
 }
 
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 640px) {
+  .sm\:visible {
+    visibility: visible;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:opacity-100 {
+    opacity: 1;
+  }
 }

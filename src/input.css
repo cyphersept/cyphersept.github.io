@@ -15,20 +15,11 @@
     aside a {
         @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-gray-1;
     }
+
     .right {
-        position: absolute; /* Assuming absolute positioning based on the context */
-        top: max(21.75%);
-        left: max(385px, 37.25%, 58.75vh);
-        /* height: 100%;
-        width: 100%;
-        padding-top: 13.75%;
-        margin-top: -13.75%;
-        padding-bottom: 52.5%;
-        margin-bottom: -52.5%;
-        padding-left: 38.75%;
-        margin-left: -38.75%;
-        padding-right: 33.5%;
-        margin-right: -33.5%; */
+        position: absolute;
+        /* top: max(21.75%);
+        left: max(385px, 37.25%, 58.75vh); */
     }
     main li {
         margin-bottom: 4px;
@@ -87,35 +78,22 @@
         .hoverline:hover::before, .selected::before {
         transform: scaleX(1);
     }
-    
-    body {
-        --opacity: 0;
-        transition: background-image 0.5s ease-out;
-    }
-    body::after{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: -1;
-        background-color: theme('colors.white');
-        opacity: var(--opacity);
-        transition: background 1s ease-in;
+
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
     }
 
-    .fade-wipe {
-        animation: fadeWipe 0.5s forwards;
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 
-    .unfade-wipe {
-        animation: fadeIn 2s backwards;
-      }
-
-    @keyframes fadeWipe {
-        0% { background-position: 0% 0%; }
-        100% { background-position: 0% 100%; }
+    .fadeOut {
+        animation: fadeOut 0.5s forwards;
+    }
+    .fadeIn {
+        animation: fadeIn 0.5s forwards;
     }
       
 }

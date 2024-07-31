@@ -6,8 +6,9 @@
     <title>Yuan Gao — Junior Web Developer </title>
     <link rel="stylesheet" href="./src/output.css">
 </head>
-<body class="h-screen min-h-[max(62.5vw,656px)] w-full min-w-[1000px] justify-center items-center font-serif text-brown-5 bg-white bg-left bg-cover relative">
-    <div class="bg bg-left bg-cover absolute h-full w-full transition-opacity"></div>
+<body class="h-screen min-h-[656px] w-full font-serif text-brown-5 bg-white relative">
+    <div class="bg bg-[auto_100%] bg-center absolute h-full w-full transition-opacity bg-no-repeat opacity-0 sm:opacity-100"></div>
+
     <aside class="left flex flex-col items-end w-[max(13rem,18%)] sticky top-[45vh] ml-6 translate-y-[-50%]">
         <h1 class="name text-4xl text-brown-5 font-bold mb-4 text-right">Yuan Gao</h1>
         <h3 class="tagline text-2xl mb-16 text-right">Web Developer</h3>
@@ -34,10 +35,11 @@
         </nav>
     </aside>
 
+    <nav class=""></nav>
     <!-- <div class="spacer shrink w-20 h-full overflow-hidden"></div> -->
 
     <!-- <main class="right shrink snap-y snap-mandatory scroll-smooth overflow-y-scroll no-scrollbar bg-[url('./img/winter.svg')] bg-cover"> -->
-    <main class="right h-[65%] w-[max(307.5px,29.33vw)] snap-y snap-mandatory scroll-smooth overflow-y-scroll no-scrollbar">
+    <main class="right absolute h-[65%] top-[21.75%] left-[calc(50%_-_21vh)] w-[46.75vh] snap-y snap-mandatory scroll-smooth overflow-y-scroll no-scrollbar">
         <section id="about" class="min-h-full py-8 snap-center snap-always px-4">
             <h1 class="text-3xl font-bold mb-8 text-red-3">About</h1>
                         <div class="text-xl font-sans">I'm a Montreal-based web developer with a keen interest in what makes the internet tick. With my background in freelance illustration, I combine sharp visuals with user-friendly functionality to deliver unique utilities via the convenience of the world wide web.</div>
@@ -160,16 +162,20 @@
     const sections = [
         {
             bg: './src/img/winter.svg',
-            threshold: 0},
+            threshold: 0,
+            get height() { return document.getElementById('skills').offsetHeight }},
         {
             bg: './src/img/spring.svg',
-            get threshold() { return document.getElementById('skills').offsetTop }},
+            get threshold() { return document.getElementById('skills').offsetTop },
+            get height() { return document.getElementById('skills').offsetHeight }},
         {
             bg: './src/img/summer.svg',
-            get threshold() { return document.getElementById('projects').offsetTop }},
+            get threshold() { return document.getElementById('projects').offsetTop },
+            get height() { return document.getElementById('projects').offsetHeight }},
         {
             bg: './src/img/autumn.svg',
-            get threshold() { return document.getElementById('contact').offsetTop }}
+            get threshold() { return document.getElementById('contact').offsetTop },
+            get height() { return document.getElementById('contact').offsetHeight }}
     ]
 
     // Project section links
@@ -205,7 +211,8 @@
     function setBg(animate=true) {
         let scrollPos = main.scrollTop;
         for (let i = 3; i >= 0 ; i--) {
-            if (scrollPos >= sections[i].threshold) {
+            const prevHeight = sections[i-1]?.height ?? 0
+            if (scrollPos >= sections[i].threshold - 0.25 * prevHeight) {
                 const   cont = document.querySelector('.bg');
                         newBg = `url(${sections[i].bg})`
                         start = sections[i].threshold;
@@ -214,30 +221,19 @@
                         // fadeOutStart = 0.7 * distance + start,
                         // change = 0.85 * distance + start;
 
-                // // Calculate opacity for ::after element
-                // let opacity = 0;
-                // // Fade out previous bg 
-                // if (scrollPos > fadeOutStart && scrollPos <= change) {
-                //     const t = (scrollPos - fadeOutStart) / (change - fadeOutStart);
-                //     opacity = cubicBezier(t, 0.42, 0, 0.58, 1);
-                // // Change and fade in new bg
-                // } else if (scrollPos > change && scrollPos <= next) {
-                //     cont.style.backgroundImage = `url(${sections[i+1].bg})`;
-                //     const t = (scrollPos - change) / (next - change);
-                //     opacity = 1 - cubicBezier(t, 0.42, 0, 0.58, 1); 
-                // }
-                // // Change if before transition point and bg doesn't match current section
-                if (!animate) {
+                if (compareNormalStrings(cont.style.backgroundImage, newBg)) return;
+                else if (!animate) {
                     (cont.style.backgroundImage = newBg);
                 }
                 else {
-                    cont.style.opacity = 0;
-                    cont.addEventListener("transitionend", function(event) {
-                        if (event.propertyName === 'opacity') {
-                            cont.style.backgroundImage = newBg;
-                            cont.style.opacity = 1;
-                        }
-                    }, {once: true});
+                    cont.classList.remove('fadeIn');
+                    cont.classList.add('fadeOut');
+                    setTimeout(() => {
+                        cont.style.backgroundImage = newBg;
+                        cont.classList.remove('fadeOut');
+                        cont.classList.add('fadeIn');
+                    }, 500);
+                    //cont.style.opacity = 0;
                 }
                 //cont.style.setProperty("--opacity", opacity);
                 break;
@@ -258,9 +254,15 @@
         return qy + py * t + px * t * t + p0 * t * t * t;
     }
 
+    function compareNormalStrings(a1, b1) {
+        const a2 = a1.replace(/['`"]/g, '');
+        const b2 = b1.replace(/['`"]/g, '');
+        return a2 == b2;
+    }
+
     // Background change on scroll
-    main.addEventListener('scroll', setBg);
     document.onload = setBg(false);
+    main.addEventListener('scroll', setBg);
 
 
 /*  TO-DO:
