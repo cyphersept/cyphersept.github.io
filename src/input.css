@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        font-size: 16px;
+        @media (max-height: theme('screens.sm')) {
+          font-size: 14px;
+        }
+    }
     iframe {
         --scalar: 1;
         transform: scale(var(--scalar));
@@ -12,8 +18,14 @@
     }
 }
 @layer components {
-    aside a {
-        @apply inline-block w-36 ml-4 align-middle py-1.5 text-center text-lg rounded-xl text-gray-1;
+    @media (max-height: 420px) {
+        aside .tagline {
+          margin-bottom: 1rem;
+        }
+
+        aside div.text-nowrap {
+            margin-bottom: 1rem;
+        }
     }
 
     .right {
@@ -34,15 +46,17 @@
         background-size: cover;
         vertical-align: bottom;
     }
-    #projects h1 a::after {
-        content: '';
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        margin-left: 0.25rem;
-        background-image: url(./img/external-link-svgrepo-com.svg);
-        background-size: cover;
-        vertical-align: bottom;
+    @media ( min-width: theme('screens.sm')) {
+        #projects h1 a::after {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-left: 0.25rem;
+            background-image: url(./img/external-link-svgrepo-com.svg);
+            background-size: cover;
+            vertical-align: bottom;
+        }
     }
 
     .no-scrollbar::-webkit-scrollbar {
@@ -69,6 +83,12 @@
         background-color: inherit;
         }
 
+        .hoverline.txt-col::before {
+            color: inherit;
+            background-color: currentColor;
+            bottom: 0px;
+        }
+
         .hoverline::before {
             transform: scaleX(0);
             transition: transform 0.3s ease;
@@ -93,7 +113,7 @@
         animation: fadeOut 0.5s forwards;
     }
     .fadeIn {
-        animation: fadeIn 0.5s forwards;
+        animation: fadeIn 0.5s;
     }
       
 }
