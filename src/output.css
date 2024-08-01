@@ -448,8 +448,11 @@ video {
 
 html {
   font-size: 16px;
-  @media (max-height: 640px) {
+  @media (max-height: 640px) and (min-width: 640px) {
     font-size: 14px;
+  }
+  @media (min-height: 1200px) {
+    font-size: calc(1.5vh);
   }
 }
 
@@ -569,7 +572,7 @@ iframe {
   --tw-contain-style:  ;
 }
 
-@media (max-height: 420px) {
+@media (max-height: 420px) and (min-width: 768px) {
   aside .tagline {
     margin-bottom: 1rem;
   }
@@ -579,10 +582,10 @@ iframe {
   }
 }
 
-.right {
-  position: absolute;
-  /* top: max(21.75%);
-        left: max(385px, 37.25%, 58.75vh); */
+@media (max-height: 600px) and (min-width: 640px) {
+  main {
+    left: calc(50% - 126px) !important;
+  }
 }
 
 main li {
@@ -706,10 +709,6 @@ main li {
   top: 3.5rem;
 }
 
-.top-32 {
-  top: 8rem;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -767,8 +766,8 @@ main li {
   height: calc(100% - 7rem);
 }
 
-.h-\[calc\(100vh_-_8rem\)\] {
-  height: calc(100vh - 8rem);
+.h-auto {
+  height: auto;
 }
 
 .h-full {
@@ -787,10 +786,6 @@ main li {
   width: 10rem;
 }
 
-.w-\[calc\(100\%-2rem\)\] {
-  width: calc(100% - 2rem);
-}
-
 .w-full {
   width: 100%;
 }
@@ -807,8 +802,8 @@ main li {
   scroll-snap-type: y var(--tw-scroll-snap-strictness);
 }
 
-.snap-mandatory {
-  --tw-scroll-snap-strictness: mandatory;
+.snap-proximity {
+  --tw-scroll-snap-strictness: proximity;
 }
 
 .snap-start {
@@ -843,8 +838,13 @@ main li {
   justify-content: center;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .overflow-y-scroll {
@@ -910,9 +910,9 @@ main li {
   background-repeat: no-repeat;
 }
 
-.object-scale-down {
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .px-8 {
@@ -930,9 +930,9 @@ main li {
   padding-bottom: 0.375rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-8 {
@@ -1086,6 +1086,28 @@ main li {
   }
 }
 
+@media not all and (min-width: 768px) {
+  .max-md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:flex {
+    display: flex;
+  }
+
+  .max-sm\:w-\[calc\(100\%_-_4rem\)\] {
+    width: calc(100% - 4rem);
+  }
+
+  .max-sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:visible {
     visibility: visible;
@@ -1107,13 +1129,21 @@ main li {
     height: 65%;
   }
 
-  .sm\:w-\[46\.75vh\] {
-    width: 46.75vh;
+  .sm\:min-h-\[600px\] {
+    min-height: 600px;
+  }
+
+  .sm\:w-\[max\(280\.5px\2c 46\.75vh\)\] {
+    width: max(280.5px,46.75vh);
   }
 
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .sm\:pt-8 {
+    padding-top: 2rem;
   }
 
   .sm\:opacity-100 {
@@ -1122,6 +1152,26 @@ main li {
 }
 
 @media (min-width: 768px) {
+  .md\:left-\[calc\(50\%_-_85vh\)\] {
+    left: calc(50% - 85vh);
+  }
+
+  .md\:left-\[calc\(50\%_-_80vh\)\] {
+    left: calc(50% - 80vh);
+  }
+
+  .md\:left-\[calc\(50\%_-_75vh\)\] {
+    left: calc(50% - 75vh);
+  }
+
+  .md\:left-\[calc\(50\%_-_max\(450\2c 75vh\)\)\] {
+    left: calc(50% - max(450,75vh));
+  }
+
+  .md\:left-\[calc\(50\%_-_max\(450px\2c 75vh\)\)\] {
+    left: calc(50% - max(450px,75vh));
+  }
+
   .md\:mb-8 {
     margin-bottom: 2rem;
   }
@@ -1142,12 +1192,25 @@ main li {
     height: 100vh;
   }
 
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:w-36 {
     width: 9rem;
   }
 
+  .md\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .md\:w-\[max\(13rem\2c 18\%\)\] {
     width: max(13rem,18%);
+  }
+
+  .md\:w-\[clamp\(13rem\2c 30\%\2c calc\(50\%_-_60vh\)\)\] {
+    width: clamp(13rem,30%,calc(50% - 60vh));
   }
 
   .md\:flex-col {

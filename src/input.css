@@ -5,8 +5,11 @@
 @layer base {
     html {
         font-size: 16px;
-        @media (max-height: theme('screens.sm')) {
+        @media (max-height: theme('screens.sm')) and (min-width: theme('screens.sm')) {
           font-size: 14px;
+        }
+        @media (min-height: 1200px) {
+            font-size: calc(1.5vh);
         }
     }
     iframe {
@@ -18,7 +21,7 @@
     }
 }
 @layer components {
-    @media (max-height: 420px) {
+    @media (max-height: 420px) and (min-width: theme('screens.md')) {
         aside .tagline {
           margin-bottom: 1rem;
         }
@@ -27,11 +30,10 @@
             margin-bottom: 1rem;
         }
     }
-
-    .right {
-        position: absolute;
-        /* top: max(21.75%);
-        left: max(385px, 37.25%, 58.75vh); */
+    @media (max-height: 600px) and (min-width: theme('screens.sm')) {
+        main {
+            left: calc(50% - 126px) !important;
+        }
     }
     main li {
         margin-bottom: 4px;
