@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuan Gao — Web Developer Portfolio</title>
     <link rel="stylesheet" href="./src/output.css">
-    <link rel="icon" href="data:,">
+    <link rel="icon" type="image/png" href="./src/img/plum.png">
 </head>
 <body class="max-sm:flex flex-col h-screen sm:min-h-[600px] w-full font-serif text-brown-5 bg-white relative">
     <div class="bg bg-[auto_100%] bg-center absolute h-full w-full transition-opacity bg-no-repeat opacity-0 sm:opacity-100 invisible sm:visible"></div>
@@ -46,6 +46,7 @@
                 <li>Bachelor's degree in computer science</li>
                 <li>Building compact websites with vanilla HTML, JS, and CSS</li>
                 <li>Rapid prototyping with TailwindCSS</li>
+                <li>Dynamic pages with React.js</li>
                 <li>Responsive and user-friendly UI/UX, for desktop and mobile</li>
                 <li>Experience with creating efficient single-page web utilities</li>
                 <li>Performance optimization for improved load times and SEO</li>
@@ -70,7 +71,7 @@
                     <a href="#repalette" onclick="showSection(this, 'repalette')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-teal-3 selected">&nbsp;&nbsp;&nbsp;repalette&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#doodle" onclick="showSection(this, 'doodle')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;doodle&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#weather" onclick="showSection(this, 'weather')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;weather&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
                         <a href="#rps" onclick="showSection(this, 'rps')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-pink-2">&nbsp;&nbsp;&nbsp;rps&nbsp;&nbsp;&nbsp;</a>
@@ -82,7 +83,10 @@
                         <a href="#signup" onclick="showSection(this, 'signup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-teal-3">&nbsp;&nbsp;&nbsp;signup&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li>
-                        <a href="#dressup" onclick="showSection(this, 'dressup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;dressup&nbsp;&nbsp;&nbsp;</a>
+                        <a href="#doodle" onclick="showSection(this, 'doodle')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;doodle&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="#dressup" onclick="showSection(this, 'dressup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-pink-2">&nbsp;&nbsp;&nbsp;dressup&nbsp;&nbsp;&nbsp;</a>
                     </li>
                 </ul>
             </nav>
@@ -90,18 +94,22 @@
             <section id="repalette" class="flex grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
                 <h1 class="text-3xl font-bold text-teal-4">Projects — 
                     <a href="https://cyphersept.github.io/repalette" target="_blank" rel="noopener" class="underline">Repalette</a></h1>
-                <h3 class="text-xl my-2">One-page pixel art bulk recolouring tool
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/repalette">Source</a>)</h3>
+                <h3 class="text-xl my-2">Pixel art bulk recolouring
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/repalette">Source</a>)
+                    <p class="text-xl">(CanvasAPI, FileAPI, JSZip, SortableJS)</p>
+                </h3>
                 <img src="./src/img/repalette-demo.gif" alt="Example gif" loading="lazy" class="rounded-xl object-contain">
             </section>
 
-            <section id="doodle" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
+            <section id="weather" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
                 <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://cyphersept.github.io/small-projects/etch" target="_blank" rel="noopener" class="underline">Etch-a-Sketch</a></h1>
-                <h3 class="text-xl my-2">Digital doodling
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/etch">Source</a>)</h3>
+                    <a href="https://cyphersept.github.io/react-weather" target="_blank" rel="noopener" class="underline">Weather App</a></h1>
+                <h3 class="text-xl my-2">Cyberpunk weather updates 
+                    (<a class="underline text-teal-4" href="https://cyphersept.github.io/react-weather">Source</a>)
+                    <p class="text-xl mb-2">(React, Tailwind, Vite, OpenMeteo API)</p>
+                </h3>
                 <div class="grow">
-                    <iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
+                    <img src="./src/img/weather.webp" alt="Example gif" loading="lazy" class="rounded-xl object-contain">
                 </div>
             </section>
 
@@ -132,6 +140,16 @@
                     (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/signup">Source</a>)</h3>
                 <div class="grow">
                     <iframe src="https://cyphersept.github.io/small-projects/signup" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.6" class="rounded-xl"></iframe>
+                </div>
+            </section>
+
+            <section id="doodle" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
+                <h1 class="text-3xl font-bold text-teal-4">Projects — 
+                    <a href="https://cyphersept.github.io/small-projects/etch" target="_blank" rel="noopener" class="underline">Etch-a-Sketch</a></h1>
+                <h3 class="text-xl my-2">Digital doodling
+                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/etch">Source</a>)</h3>
+                <div class="grow">
+                    <iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
                 </div>
             </section>
 
