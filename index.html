@@ -1,48 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yuan Gao — Web Developer Portfolio</title>
-    <link rel="stylesheet" href="./src/output.css">
-    <link rel="icon" type="image/png" href="./src/img/plum.png">
+    <link rel="stylesheet" href="./src/reset.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="icon" type="image/png" href="./src/img/plum.png" />
 </head>
-<body class="max-sm:flex flex-col h-screen sm:min-h-[600px] w-full font-serif text-brown-5 bg-white relative">
-    <div class="bg bg-[auto_100%] bg-center absolute h-full w-full transition-opacity bg-no-repeat opacity-0 sm:opacity-100 invisible sm:visible"></div>
 
-    <aside class="left flex md:flex-col flex-wrap md:flex-nowrap justify-between md:justify-center md:items-end md:w-[clamp(13rem,30%,calc(50%_-_60vh))] sticky md:h-full md:ml-6 py-8 py-auto max-md:px-8">
-        <h1 class="name text-4xl text-brown-5 font-bold text-center grow-0 md:text-right">Yuan Gao</h1>
-        <h3 class="tagline text-2xl mt-4 mb-16 text-right hidden md:block transition-[margin]">Web Developer</h3>
-        <nav class="flex items-center md:flex-col max-md:gap-4">
-            <div class="text-red-3 text-nowrap md:mb-8 transition-[margin]">
-                <svg id="seal" class="hidden md:inline mr-4" height=2.5rem width=2.5rem xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="7.87 7.8 84.25 84.4">  <g>   <path fill="currentColor" d="m50 7.8125c-22.738 0-41.277 18.09-42.109 40.625h40.547v-31.184c-13.82 0.6875-26.203 10.371-29.906 23.371h22.094v-12.102c-3.6836 1.6211-6.875 4.2109-9.2695 7.4141h-3.8633l0.58594-0.87109c3.2344-4.8047 8.0703-8.4609 13.617-10.297l2.0547-0.68359v19.664h-29.152l0.40625-1.8906c3.4023-15.848 18.445-27.797 34.996-27.797 16.555 0 31.602 11.949 34.996 27.797l0.40234 1.8906h-29.148v-19.664l2.0547 0.67969c5.543 1.8359 10.383 5.4922 13.617 10.297l0.58594 0.87109h-3.8672c-2.3906-3.1992-5.582-5.7891-9.2656-7.4102v12.102h22.094c-3.6953-13-16.082-22.684-29.906-23.371v31.184h40.547c-0.83203-22.535-19.371-40.625-42.109-40.625z"></path>   <path fill="currentColor" d="m51.562 51.562v31.184c13.828-0.6875 26.211-10.371 29.906-23.371h-22.094v12.102c3.6836-1.6211 6.875-4.2109 9.2695-7.4141h3.8672l-0.58594 0.87109c-3.2344 4.8047-8.0703 8.4609-13.617 10.297l-2.0586 0.68359v-19.664h29.148l-0.40234 1.8906c-3.3945 15.848-18.441 27.797-34.996 27.797-16.551 0-31.594-11.949-34.996-27.797l-0.40625-1.8906h29.152v19.664l-2.0547-0.67969c-5.543-1.8359-10.383-5.4922-13.617-10.297l-0.58594-0.875h3.8672c2.3945 3.2031 5.5859 5.793 9.2695 7.4141l-0.003906-12.102h-22.094c3.7031 13 16.086 22.684 29.906 23.371v-31.184h-40.547c0.83203 22.535 19.371 40.625 42.109 40.625s41.277-18.09 42.109-40.625z"></path>  </g> </svg>
-                <!-- https://thenounproject.com/icon/chinese-ornament-6716715/ -->
-                <a href="#about" class="inline-block font-semibold md:font-normal md:w-36 align-middle py-1.5 text-center text-lg rounded-xl md:text-gray-1 md:bg-red-3 max-sm:txt-col hoverline">About</a>
-            </div>
-            <div class="text-pink-3 text-nowrap md:mb-8 transition-[margin]">
-                <svg class="hidden md:inline mr-4" height=2.5rem width=2.5rem><use xlink:href="#seal"/></svg>
-                <a href="#skills" class="inline-block font-semibold md:font-normal md:w-36 align-middle py-1.5 text-center text-lg rounded-xl md:text-gray-1 md:bg-pink-3 max-sm:txt-col hoverline">Skills</a>
-            </div>
-            <div class="text-teal-4 text-nowrap md:mb-8 transition-[margin]">
-                <svg class="hidden md:inline mr-4" height=2.5rem width=2.5rem><use xlink:href="#seal"/></svg>
-                <a href="#projects" class="inline-block font-semibold md:font-normal md:w-36 align-middle py-1.5 text-center text-lg rounded-xl md:text-gray-1 md:bg-teal-4 max-sm:txt-col hoverline">Projects</a>
-            </div>
-            <div class="text-orange-2 text-nowrap">
-                <svg class="hidden md:inline mr-4" height=2.5rem width=2.5rem><use xlink:href="#seal"/></svg>
-                <a href="#contact" class="inline-block font-semibold md:font-normal md:w-36 align-middle py-1.5 text-center text-lg rounded-xl md:text-gray-1 md:bg-orange-2 max-sm:txt-col hoverline">Contact</a>
-            </div>
-        </nav>
-    </aside>
+<body>
+    <nav>
+        <img class="icon" src="./src/img/plum.svg" alt=""></img>
+        <h1>Yuan Gao</h1>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <main class="right sm:absolute h-auto sm:h-[65%] sm:top-[21.75%] left-0 sm:left-[calc(50%_-_21vh)] w-full sm:w-[max(280.5px,46.75vh)] snap-y snap-proximity scroll-smooth overflow-y-scroll no-scrollbar">
-        <section id="about" class="min-h-full sm:pt-8 pb-8 px-8 sm:px-4 snap-start snap-always">
-            <h1 class="text-3xl font-bold mb-8 text-red-3">About</h1>
-                        <div class="text-xl font-sans">I'm a Montreal-based web developer with a keen interest in what makes the internet tick. With my background in freelance illustration, I combine sharp visuals with user-friendly functionality to deliver unique utilities via the convenience of the world wide web.</div>
+    <header>
+        <div class="frame">
+            <img class="bg" src="" alt="" srcset="" />
+            <div class="ripple fixed1"></div>
+            <div class="ripple fixed2"></div>
+            <div class="ripple follow"></div>
+            <img src="./src/img/noun-koi-fish-1610333.svg" alt="" srcset="" class="fish a">
+            <img src="./src/img/noun-koi-fish-1610333.svg" alt="" srcset="" class="fish b">
+            <img src="./src/img/noun-koi-fish-1610333.svg" alt="" srcset="" class="fish c">
+            <img src="./src/img/noun-koi-fish-1610333.svg" alt="" srcset="" class="fish d">
+            <img src="./src/img/noun-koi-fish-straight.svg" alt="" srcset="" class="fish e">
+            <div class="contents">
+                <h2>Frontend Web Developer</h2>
+                <h1>Yuan Gao</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h1>About</h1>
+            <div class="contents">
+                <div class="left frame">
+                    <p>
+                        I'm a Montreal-based web developer with a keen interest in what makes
+                        the internet tick. With my background in freelance illustration, I
+                        combine sharp visuals with user-friendly functionality to deliver
+                        unique utilities via the convenience of the world wide web.
+                    </p>
+                </div>
+
+                <div class="hover-doodle">
+                    <img src="./src/img/lil-guy.svg" alt="" srcset="">
+                </div>
+
+                <div class="fish-carousel">
+                    <ul class="group" aria-hidden="true">
+                        <li>BS Comp Sci</li>
+                        <li>Frontend</li>
+                        <li>HTML</li>
+                        <li>JS</li>
+                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>React</li>
+                        <li>Webpack</li>
+                        <li>Vite</li>
+                        <li>Jest</li>
+                        <li>Tailwind</li>
+                        <li>APIs</li>
+                        <li>Design</li>
+                        <li>Illustration</li>
+                        <li>English</li>
+                        <li>Mandarin</li>
+                        <li>French B2</li>
+                    </ul>
+                    <ul class="group" aria-hidden="true">
+                        <li>BS Comp Sci</li>
+                        <li>Frontend</li>
+                        <li>HTML</li>
+                        <li>JS</li>
+                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>React</li>
+                        <li>Webpack</li>
+                        <li>Vite</li>
+                        <li>Jest</li>
+                        <li>Tailwind</li>
+                        <li>APIs</li>
+                        <li>Design</li>
+                        <li>Illustration</li>
+                        <li>English</li>
+                        <li>Mandarin</li>
+                        <li>French B2</li>
+                    </ul>
+                </div>
+                <div class="fish-carousel offset">
+                    <ul class="group" aria-hidden="true">
+                        <li>BS Comp Sci</li>
+                        <li>Frontend</li>
+                        <li>HTML</li>
+                        <li>JS</li>
+                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>React</li>
+                        <li>Webpack</li>
+                        <li>Vite</li>
+                        <li>Jest</li>
+                        <li>Tailwind</li>
+                        <li>APIs</li>
+                        <li>Design</li>
+                        <li>Illustration</li>
+                        <li>English</li>
+                        <li>Mandarin</li>
+                        <li>French B2</li>
+                    </ul>
+                    <ul class="group" aria-hidden="true">
+                        <li>BS Comp Sci</li>
+                        <li>Frontend</li>
+                        <li>HTML</li>
+                        <li>JS</li>
+                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>React</li>
+                        <li>Webpack</li>
+                        <li>Vite</li>
+                        <li>Jest</li>
+                        <li>Tailwind</li>
+                        <li>APIs</li>
+                        <li>Design</li>
+                        <li>Illustration</li>
+                        <li>English</li>
+                        <li>Mandarin</li>
+                        <li>French B2</li>
+                    </ul>
+                </div>
+            </div>
         </section>
-        <section id="skills" class="min-h-full sm:pt-8 pb-8 px-8 sm:px-4 snap-start snap-always text-xl">
-            <h1 class="text-3xl font-bold mb-8 text-pink-3">My Skills</h1>
-            <h3 class="font-bold text-2xl mt-4 mb-2">Web Development</h3>
-            <ul class="font-sans">
+        <!-- <section id="skills">
+            <h1>My Skills</h1>
+            <h3>Web Development</h3>
+            <ul>
                 <li>Bachelor's degree in computer science</li>
                 <li>Building compact websites with vanilla HTML, JS, and CSS</li>
                 <li>Rapid prototyping with TailwindCSS</li>
@@ -51,251 +155,124 @@
                 <li>Experience with creating efficient single-page web utilities</li>
                 <li>Performance optimization for improved load times and SEO</li>
             </ul>
-            <h3 class="font-bold text-2xl mt-4 mb-2">Graphic Design</h3>
-            <ul class="font-sans">
+            <h3>Graphic Design</h3>
+            <ul>
                 <li>Vector and raster asset creation and modification</li>
                 <li>Dynamic image manipulation</li>
                 <li>4+ years of experience in freelance illustration</li>
             </ul>
-            <h3 class="font-bold text-2xl mt-4 mb-2">Others</h3>
-            <ul class="font-sans">
+            <h3>Others</h3>
+            <ul>
                 <li>Native-level fluency in both Mandarin and English</li>
                 <li>Document writing, editing, and translation</li>
                 <li>Some proficiency in French</li>
             </ul>
+        </section> -->
+        <section id="projects">
+            <h1>My Projects</h1>
+
+
         </section>
-        <section id="projects" class="h-full pt-2 sm:pt-4 pb-4 max-sm:px-8 snap-start snap-always relative flex flex-col">
-            <nav>
-                <ul class="flex gap-x-2 gap-y-4 flex-wrap content-between justify-center mb-4">
-                    <li>
-                    <a href="#repalette" onclick="showSection(this, 'repalette')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-teal-3 selected">&nbsp;&nbsp;&nbsp;repalette&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="#weather" onclick="showSection(this, 'weather')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;weather&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="#rps" onclick="showSection(this, 'rps')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-pink-2">&nbsp;&nbsp;&nbsp;rps&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="#calculate" onclick="showSection(this, 'calculate')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-3">&nbsp;&nbsp;&nbsp;calculate&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="#signup" onclick="showSection(this, 'signup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-teal-3">&nbsp;&nbsp;&nbsp;signup&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="#doodle" onclick="showSection(this, 'doodle')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-mauve-1">&nbsp;&nbsp;&nbsp;doodle&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="#dressup" onclick="showSection(this, 'dressup')" class="rounded-xl text-gray-1 py-1.5 hoverline bg-pink-2">&nbsp;&nbsp;&nbsp;dressup&nbsp;&nbsp;&nbsp;</a>
-                    </li>
-                </ul>
-            </nav>
+        <section id="contact">
+            <h1>Contact Me</h1>
+            <div class="frame">
+                <div class="contents">
+                    <a class="unstyled email" href="mailto:ygao050@gmail.com">
+                        <div class="blob">
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="1 3 22 18">
+                                <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="m4 7 6.2 4.65a3 3 0 0 0 3.6 0L20 7" stroke="#1a1a1a" stroke-width="1.25"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
 
-            <section id="repalette" class="flex grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://cyphersept.github.io/repalette" target="_blank" rel="noopener" class="underline">Repalette</a></h1>
-                <h3 class="text-xl my-2">Pixel art bulk recolouring
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/repalette" target="_blank" rel="noopener">Source</a>)
-                    <p class="text-xl">(CanvasAPI, FileAPI, JSZip, SortableJS)</p>
-                </h3>
-                <img src="./src/img/repalette-demo.gif" alt="Example gif" loading="lazy" class="rounded-xl object-contain">
-            </section>
+                            <div>Email</div>
+                        </div>
+                    </a>
+                    <a class="unstyled linkedin" href="https://www.linkedin.com/in/ygao000/">
+                        <div class="blob">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor"
+                                    d="M28.778 1.004H3.191a2.185 2.185 0 0 0-2.186 2.159v25.672a2.186 2.186 0 0 0 2.186 2.161h25.612c1.2 0 2.175-.963 2.194-2.159V3.165a2.195 2.195 0 0 0-2.195-2.161h-.029.001zM9.9 26.562H5.446V12.251H9.9zM7.674 10.293a2.579 2.579 0 1 1 2.579-2.58v.004a2.577 2.577 0 0 1-2.577 2.577h-.003zm18.882 16.269h-4.441v-6.959c0-1.66-.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441V12.252h4.266v1.951h.058a4.686 4.686 0 0 1 4.22-2.312h-.009c4.5 0 5.332 2.962 5.332 6.817v7.855z" />
+                            </svg>
+                            <div>LinkedIn</div>
+                        </div>
+                    </a>
+                    <a class="unstyled github" href="https://github.com/cyphersept">
+                        <div class="blob">
+                            <svg viewBox="-2 -4 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                                    fill="currentColor" />
+                            </svg>
+                            <div>Github</div>
+                        </div>
+                    </a>
 
-            <section id="weather" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://main--cyberpunk-weather.netlify.app/" target="_blank" rel="noopener" class="underline">Weather App</a></h1>
-                <h3 class="text-xl my-2">Cyberpunk weather updates 
-                    (<a class="underline text-teal-4" href="https://cyphersept.github.io/react-weather" target="_blank" rel="noopener">Source</a>)
-                    <p class="text-xl mb-2">(React, Tailwind, Vite, OpenMeteo API)</p>
-                </h3>
-                <div class="grow">
-                    <img src="./src/img/weather.webp" alt="Example gif" loading="lazy" class="rounded-xl object-contain">
+                    <a class="unstyled site-source" href="https://github.com/cyphersept/monochrome-portfolio-template">
+                        <div class="blob">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path
+                                    d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
+                                    fill="currentColor" />
+                            </svg>
+                            <div>Site Code</div>
+                        </div>
+                    </a>
                 </div>
-            </section>
-
-            <section id="rps" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://cyphersept.github.io/small-projects/rps" target="_blank" rel="noopener" class="underline">Rock Paper Scissors</a></h1>
-                <h3 class="text-xl my-2">Best of three
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/rps" target="_blank" rel="noopener">Source</a>)</h3>
-                <div class="grow">
-                    <iframe src="https://cyphersept.github.io/small-projects/rps" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
-                </div>
-            </section>
-
-            <section id="calculate" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://cyphersept.github.io/small-projects/calculator" target="_blank" rel="noopener" class="underline">Calculator</a></h1>
-                <h3 class="text-xl my-2">Classic four function calculator, like you used to have
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/calculator" target="_blank" rel="noopener">Source</a>)</h3>
-                <div class="grow">
-                    <iframe src="https://cyphersept.github.io/small-projects/calculator" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
-                </div>
-            </section>
-
-            <section id="signup" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://cyphersept.github.io/small-projects/signup" target="_blank" rel="noopener" class="underline">Signup Page</a></h1>
-                <h3 class="text-xl my-2">Create an account for a totally real service
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/signup" target="_blank" rel="noopener">Source</a>)</h3>
-                <div class="grow">
-                    <iframe src="https://cyphersept.github.io/small-projects/signup" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.6" class="rounded-xl"></iframe>
-                </div>
-            </section>
-
-            <section id="doodle" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — 
-                    <a href="https://cyphersept.github.io/small-projects/etch" target="_blank" rel="noopener" class="underline">Etch-a-Sketch</a></h1>
-                <h3 class="text-xl my-2">Digital doodling
-                    (<a class="underline text-teal-4" href="https://github.com/cyphersept/small-projects/tree/main/etch" target="_blank" rel="noopener">Source</a>)</h3>
-                <div class="grow">
-                    <iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8" class="rounded-xl"></iframe>
-                </div>
-            </section>
-
-            <section id="dressup" class="hidden grow scroll-mt-36 h-[calc(100%-7rem)] flex-col top-14">
-                <h1 class="text-3xl font-bold text-teal-4">Projects — Dressup Game Maker (WIP)</h1>
-                <h3 class="text-xl my-2">Lightweight app for creating HTML paperdolls with zero code (<a class="underline text-teal-4" href="https://github.com/cyphersept/dressup-maker" target="_blank" rel="noopener">Source</a>)
-            </section>
+            </div>
         </section>
-        <section id="contact" class="min-h-full sm:pt-8 pb-8 px-8 sm:px-4 snap-start snap-always">
-            <h1 class="text-3xl font-bold mb-8 text-orange-2">Contact Me</h1>
-                <a href="mailto:ygao050@gmail.com" class="pl-6 py-4 w-40 text-xl rounded-xl block bg-orange-1 text-white font-semibold mb-4">
-                    <img src="./src/img/email-8-svgrepo-com.svg" width=24px height=24px alt="Email icon" class="mr-3 inline align-text-top" loading="lazy"> Email
-                </a>
-                <a href="https://github.com/cyphersept" class="pl-6 py-4 w-40 text-xl rounded-xl block bg-orange-2 text-white font-semibold mb-8">
-                    <img src="./src/img/github-mark-white.svg" width=24px height=24px alt="Github logo" class="mr-3 inline align-text-bottom" loading="lazy"> Github
-                </a>
-                <div class="text-xl mb-4">SVG icons courtesy of <a class="underline text-orange-2" href="https://www.svgrepo.com/">SVG Repo.</a>
+
+        <footer>
+            <a href="http://github.com/cyphersept/black-fish-white-fish-template"> <svg viewBox="0 0 98 96"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                        fill="currentColor" />
+                </svg><span>cyphersept 2025</span></a>
+        </footer>
+
+        <template class="project-template">
+            <article class="project frame">
+                <img src="" alt="Page screenshot" />
+                <div class="contents">
+                    <div class="info">
+                        <h2>Title</h2>
+                        <p>Description</p>
+                    </div>
+                    <div class="links">
+                        <a href="" target="_blank" rel="noopener" class="repo" aria-label="project github">
+                            <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+
+                        <a href="" target="_blank" rel="noopener" aria-label="project live site" class="live">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 5H8.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C5 6.52 5 7.08 5 8.2v7.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h7.606c1.118 0 1.677 0 2.104-.218.377-.192.683-.498.875-.874.218-.428.218-.987.218-2.105V14m1-5V4m0 0h-5m5 0-7 7"
+                                    stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                    <h3>Stack</h3>
+                    <ul class="stack">
+                        <li data-n="1"></li>
+                        <li data-n="2"></li>
+                        <li data-n="3"></li>
+                        <li data-n="4"></li>
+                        <li data-n="5"></li>
+                    </ul>
                 </div>
-                <div class="text-xl mb-4">
-                    All other assets on this website are created by myself with all rights reserved.
-                </div>
-                <div class="text-xl">
-                    View this site's source code <a class="underline text-orange-3 font-bold" href="https://github.com/cyphersept/cyphersept.github.io">here.</a>
-                </div>
-        </section>
+            </article>
+        </template>
     </main>
 </body>
-<script>
-    const main = document.querySelector('main.right');
-    const sections = [
-        {
-            bg: './src/img/winter.svg',
-            threshold: 0,
-            get height() { return document.getElementById('skills').offsetHeight }},
-        {
-            bg: './src/img/spring.svg',
-            get threshold() { return document.getElementById('skills').offsetTop },
-            get height() { return document.getElementById('skills').offsetHeight }},
-        {
-            bg: './src/img/summer.svg',
-            get threshold() { return document.getElementById('projects').offsetTop },
-            get height() { return document.getElementById('projects').offsetHeight }},
-        {
-            bg: './src/img/autumn.svg',
-            get threshold() { return document.getElementById('contact').offsetTop },
-            get height() { return document.getElementById('contact').offsetHeight }}
-    ]
+<script src="contents.js"></script>
+<script src="./src/script.js"></script>
 
-    // Project section links
-    function showSection(nav, id, ancestorId="projects") {
-        const ancestor = document.getElementById(ancestorId);
-        const prev = ancestor.querySelector("section.flex");
-        const next = document.getElementById(id);
-
-        // Hides all but selected section
-        prev.classList.remove("flex");
-        prev.classList.add("hidden");
-        next.classList.add("flex");
-        next.classList.remove("hidden");
-
-        // Selects element in nav
-        ancestor.querySelector(".selected").classList.remove("selected");
-        nav.classList.add("selected");
-    }
-
-    // Main nav jump anchor links
-    document.querySelectorAll('.left a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            
-            // Scroll the inner element
-            main.scrollTop = target.offsetTop;
-        });
-    });
-
-    function setBg(animate=true) {
-        let scrollPos = main.scrollTop;
-        for (let i = 3; i >= 0 ; i--) {
-            const prevHeight = sections[i-1]?.height ?? 0
-            if (scrollPos >= sections[i].threshold - 0.25 * prevHeight) {
-                const   cont = document.querySelector('.bg');
-                        newBg = `url(${sections[i].bg})`
-                        start = sections[i].threshold;
-                        //next = sections[i+1].threshold,
-                        // distance = next - start,
-                        // fadeOutStart = 0.7 * distance + start,
-                        // change = 0.85 * distance + start;
-
-                if (compareNormalStrings(cont.style.backgroundImage, newBg)) return;
-                else if (!animate) {
-                    (cont.style.backgroundImage = newBg);
-                }
-                else {
-                    cont.classList.remove('fadeIn');
-                    cont.classList.add('fadeOut');
-                    setTimeout(() => {
-                        cont.style.backgroundImage = newBg;
-                        cont.classList.remove('fadeOut');
-                        cont.classList.add('fadeIn');
-                    }, 500);
-                    //cont.style.opacity = 0;
-                }
-                //cont.style.setProperty("--opacity", opacity);
-                break;
-            }
-        }
-    }
-
-    function cubicBezier(t, p0, p1, p2, p3) {
-        // Calculate intermediate points
-        const px = p1 - p0 * t;
-        const py = p2 - p1 * t;
-
-        // Calculate final position
-        const qx = p3 - px * t;
-        const qy = p3 - py * t;
-
-        // Return the final position
-        return qy + py * t + px * t * t + p0 * t * t * t;
-    }
-
-    function compareNormalStrings(a1, b1) {
-        const a2 = a1.replace(/['`"]/g, '');
-        const b2 = b1.replace(/['`"]/g, '');
-        return a2 == b2;
-    }
-
-    // Background change on scroll
-    document.onload = setBg(false);
-    main.addEventListener('scroll', setBg);
-
-
-/*  TO-DO:
-    - https://www.youtube.com/watch?v=UmzFk68Bwdk use for scroll animations? else jquery
-    - create illustrations
-    - change scrollbars in embeds (signup, calc)
-    - replace signup image with compressed
-    
-    FINISHED:
-    - record demo gifs
-    - add and style links to page and source code, lazy embed??
-    - smooth scroll animations
-    - host old projects
-*/
-</script>
 </html>

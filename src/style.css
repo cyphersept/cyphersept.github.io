@@ -1,0 +1,610 @@
+@font-face {
+  font-family: "Reem Kufi";
+
+  font-weight: 200 800;
+  font-style: normal;
+  src: url("ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  font-family: "Reem Kufi", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --b-width: 4px;
+  --white: white;
+  --black: #1a1a1a;
+  --section-pad-x: 4rem;
+  --section-pad-y: 2rem;
+  font-size: 20px;
+}
+
+/* #region Global Styles */
+/* =============================================== */
+
+svg {
+  height: 1em;
+  width: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+a.unstyled,
+.unstyled a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.frame {
+  outline: var(--b-width) solid var(--black);
+  position: relative;
+  box-shadow: -1rem -1rem var(--black);
+}
+
+.frame > .contents {
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+/* .frame::after {
+  content: "";
+  position: absolute;
+  outline: var(--b-width) solid var(--black);
+  width: 100%;
+  height: 100%;
+  left: -1rem;
+  top: -1rem;
+} */
+/* #endregion Global Styles */
+
+/* =============================================== */
+/* #region Nav Bar Styling */
+/* =============================================== */
+
+nav {
+  padding: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: first baseline;
+}
+
+nav h1 {
+  margin-right: auto;
+  line-height: 1em;
+  font-size: 2rem;
+}
+
+nav .links {
+  display: flex;
+  gap: 4rem;
+}
+
+nav .icon {
+  height: 2rem;
+  margin-right: 1rem;
+  width: auto;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+/* #endregion Nav Bar Styling */
+/* #region Header */
+/* =============================================== */
+
+header {
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+header .frame {
+  height: 20rem;
+  overflow: hidden;
+}
+
+header .frame .contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  will-change: contents;
+}
+
+header h1 {
+  text-align: right;
+  font-size: 3.5rem;
+}
+
+header h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+header .bg {
+  position: absolute;
+}
+
+/* #endregion Header */
+/* #region Main*/
+/* =============================================== */
+
+main > section {
+  padding: var(--section-pad-y) var(--section-pad-x);
+  min-height: 30rem;
+}
+
+main h1 {
+  margin-bottom: 1rem;
+}
+
+/* #endregion Main */
+/* =============================================== */
+/* #region About*/
+/* =============================================== */
+
+#about {
+  font-size: 1.5rem;
+  min-height: fit-content;
+}
+
+#about .contents {
+  display: flex;
+  position: relative;
+}
+
+#about .frame {
+  background-color: var(--white);
+  max-width: calc(200% / 3);
+  height: unset;
+  padding: 2rem;
+  flex: 2 0 10rem;
+}
+
+#about .hover-doodle {
+  float: right;
+  flex: 1 0 10rem;
+}
+
+.fish-carousel {
+  --duration: 30s;
+  bottom: 30%;
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  will-change: transform;
+  position: absolute;
+  margin-left: -5rem;
+  z-index: -10;
+}
+
+.fish-carousel.offset {
+  transform: translateY(200%);
+  animation-delay: -2s;
+}
+
+.fish-carousel.offset ul {
+  animation-delay: calc(var(--duration) / -2 + 1s);
+}
+
+.fish-carousel ul {
+  list-style-type: none;
+  display: flex;
+  row-gap: 1rem;
+  padding-left: 0;
+  font-size: 1.5rem;
+  animation: move var(--duration) linear infinite;
+}
+
+.fish-carousel li {
+  background-color: var(--black);
+  color: var(--white);
+  position: relative;
+  margin: 0 1.75em;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  white-space: nowrap;
+}
+
+.fish-carousel li::before,
+.fish-carousel li::after {
+  width: 2.4em;
+  position: absolute;
+  z-index: -10;
+}
+
+.fish-carousel li::before {
+  content: url(./img/fishhead.svg);
+  left: 0;
+  transform: translate(-70%, -0.55em);
+}
+
+.fish-carousel li::after {
+  content: url(./img/fishtail.svg);
+  right: 0;
+  transform: translate(95%, -0.65em);
+}
+
+/* #endregion About */
+/* =============================================== */
+/* #region Projects*/
+/* =============================================== */
+#projects {
+  gap: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid; */
+}
+
+#projects h1 {
+  width: 100%;
+}
+
+.project {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  height: 21rem;
+  flex: 1 0 26rem;
+}
+
+.project img {
+  height: 100%;
+  position: absolute;
+  max-width: calc(100% / 3);
+  object-fit: cover;
+  will-change: contents;
+  transition: max-width 200ms ease-in-out;
+  border-right: var(--b-width) solid var(--black);
+  box-sizing: content-box;
+  z-index: 10;
+}
+.project img:hover {
+  max-width: 100%;
+}
+
+.project iframe {
+  max-width: calc(60% / var(--scalar));
+  height: calc(100% / var(--scalar));
+  transform: scale(var(--scalar));
+  outline: none;
+  border: none;
+  border-right: calc(var(--b-width) / var(--scalar)) solid var(--black);
+  transform-origin: top left;
+}
+
+.project .contents {
+  margin-left: calc(100% / 3);
+}
+
+.project .links {
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  font-size: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.links a {
+  color: inherit;
+}
+
+/* #endregion Projects */
+
+/* #region Stack*/
+/* =============================================== */
+
+/* For iteratively styling */
+[data-n="1"] {
+  --n: 1;
+}
+[data-n="2"] {
+  --n: 2;
+}
+[data-n="3"] {
+  --n: 3;
+}
+[data-n="4"] {
+  --n: 4;
+}
+[data-n="5"] {
+  --n: 5;
+}
+[data-n="6"] {
+  --n: 6;
+}
+
+.stack {
+  padding-left: 1rem;
+}
+
+.stack li {
+  transform: translateX(0);
+  transition: 200ms ease-in;
+  list-style: none;
+}
+
+.stack li::before {
+  display: inline-block;
+  background: var(--black);
+  height: 0.5rem;
+  width: 0.5rem;
+  content: "";
+
+  margin-right: 1rem;
+  transition: margin;
+  transition: 200ms ease-in;
+}
+
+.stack:hover li::before {
+  width: 3rem;
+  transform-origin: right;
+}
+
+.stack:hover li {
+  transform: translateX(calc(var(--n) * 1.5rem - 1.5rem));
+}
+
+/* #endregion Stack */
+
+/* #region Contact*/
+/* =============================================== */
+
+#contact h1 {
+  margin-bottom: 2rem;
+}
+
+#contact .contents {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.blob {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+  overflow: visible;
+}
+
+.blob svg {
+  aspect-ratio: 1;
+  width: 8rem;
+  height: auto;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 0.5rem;
+}
+
+.blob > div:last-child {
+  margin-top: 4px;
+  font-size: clamp(1rem, 3.5vw, 3rem);
+  text-align: center;
+}
+
+#contact a:nth-child(2) {
+  margin-top: 6rem;
+}
+
+#contact a:nth-child(3) {
+  margin-top: 2rem;
+}
+
+#contact a:nth-child(4) {
+  margin-top: 8rem;
+}
+/* #endregion Contact */
+
+/* #region Footer*/
+/* =============================================== */
+
+footer a {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+/* #region Contact*/
+/* =============================================== */
+
+/* #endregion Contact */
+
+/* #region Animations*/
+/* =============================================== */
+
+.fish {
+  mix-blend-mode: difference;
+  position: absolute;
+  padding-left: 2rem;
+  padding-top: 4rem;
+  bottom: -6rem;
+  right: -4rem;
+  height: 17rem;
+  transform-origin: top left;
+  animation: rotate 5s infinite cubic-bezier(0.5, 0, 0.4, 1);
+}
+
+.fish.a {
+  height: 18rem;
+  animation-delay: 1s;
+  animation-duration: 6s;
+}
+
+.fish.c {
+  transform: scale(-1);
+  animation-delay: -0.5s;
+}
+
+.fish.d {
+  transform: scaleX(-1);
+  animation-direction: reverse;
+  left: 0;
+  height: 12rem;
+  bottom: -12rem;
+  padding: 0;
+  animation-duration: 4.5s;
+}
+
+.fish.e {
+  scale: 1 -1;
+  transform-origin: bottom right;
+  bottom: 6rem;
+  left: -6rem;
+  padding-bottom: 9rem;
+  height: 25rem;
+  animation-duration: 9s;
+}
+
+.ripple,
+.ripple::after,
+.ripple::before {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "";
+  height: var(--ripple-size);
+  width: var(--ripple-size);
+  outline: 4px solid var(--black);
+  border-radius: 100%;
+  animation: ripple infinite ease-in-out;
+  animation-delay: var(--delay1);
+  animation-duration: var(--duration);
+}
+
+.ripple {
+  --ripple-size: 6rem;
+  --delay1: 0ms;
+  --delay2: 300ms;
+  --delay3: 1000ms;
+  --duration: 3.5s;
+  translate: -50% -50%;
+  transition: all 200ms ease-out;
+}
+
+.ripple::after {
+  animation-delay: var(--delay2);
+}
+
+.ripple::before {
+  animation-delay: var(--delay3);
+}
+
+.ripple.follow {
+  bottom: -6rem;
+  left: 0;
+}
+
+.ripple.fixed1 {
+  --ripple-size: 10rem;
+  --delay1: 300ms;
+  --delay2: 1200ms;
+  --delay3: 2000ms;
+  --duration: 5s;
+  top: 1rem;
+  right: -7rem;
+}
+
+.ripple.fixed2 {
+  --ripple-size: 16rem;
+  --delay1: 1000ms;
+  --delay2: 1900ms;
+  --delay3: 2800ms;
+  --duration: 5s;
+  left: 0rem;
+  bottom: -16rem;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 1;
+    scale: 0.25;
+  }
+
+  80% {
+    opacity: 0.6;
+    scale: 1.475;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    rotate: 0deg;
+  }
+  0% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* #endregion Animations*/
+
+/* #region Media*/
+/* #endregion Media*/
+
+@media (max-width: 75rem) {
+  #about .frame {
+    box-shadow: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    flex: auto;
+    max-width: unset;
+    margin-bottom: 8rem;
+  }
+
+  #about .hover-doodle {
+    display: none;
+    height: 14rem;
+    max-height: 100%;
+  }
+
+  #about .hover-doodle img {
+    height: 100%;
+  }
+  #about .fish-carousel {
+    bottom: 18%;
+  }
+}
+
+@media (min-width: 92rem) {
+  #about .contents {
+    align-items: start;
+  }
+
+  #about .frame {
+    padding-bottom: 3rem;
+  }
+}
