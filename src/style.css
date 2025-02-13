@@ -157,6 +157,10 @@ main h1 {
   min-height: fit-content;
 }
 
+#about h1 {
+  margin-bottom: 2rem;
+}
+
 #about .contents {
   display: flex;
   position: relative;
@@ -201,7 +205,7 @@ main h1 {
   display: flex;
   row-gap: 1rem;
   padding-left: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   animation: move var(--duration) linear infinite;
 }
 
@@ -210,14 +214,14 @@ main h1 {
   color: var(--white);
   position: relative;
   margin: 0 1.75em;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
   white-space: nowrap;
 }
 
 .fish-carousel li::before,
 .fish-carousel li::after {
-  width: 2.4em;
+  width: 2.3em;
   position: absolute;
   z-index: -10;
 }
@@ -225,13 +229,13 @@ main h1 {
 .fish-carousel li::before {
   content: url(./img/fishhead.svg);
   left: 0;
-  transform: translate(-70%, -0.55em);
+  transform: translate(-75%, -0.5em);
 }
 
 .fish-carousel li::after {
   content: url(./img/fishtail.svg);
   right: 0;
-  transform: translate(95%, -0.65em);
+  transform: translate(93%, -0.6em);
 }
 
 /* #endregion About */
@@ -392,7 +396,7 @@ main h1 {
 
 .blob > div:last-child {
   margin-top: 4px;
-  font-size: clamp(1rem, 3.5vw, 3rem);
+  font-size: clamp(1rem, 3.5vw, 2rem);
   text-align: center;
 }
 
@@ -582,7 +586,7 @@ footer a {
     padding: 0;
     flex: auto;
     max-width: unset;
-    margin-bottom: 8rem;
+    margin-bottom: 10rem;
   }
 
   #about .hover-doodle {
@@ -593,9 +597,6 @@ footer a {
 
   #about .hover-doodle img {
     height: 100%;
-  }
-  #about .fish-carousel {
-    bottom: 18%;
   }
 }
 
