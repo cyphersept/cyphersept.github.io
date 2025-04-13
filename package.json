@@ -1,15 +1,18 @@
 {
-  "name": "portfolio-site",
-  "version": "1.0.0",
-  "description": "",
-  "main": "tailwind.config.js",
-  "devDependencies": {
-    "tailwindcss": "^3.4.4",
-    "tailwindcss-cli": "^0.1.2"
-  },
+  "name": "monochrome-portfolio-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build-css": "tailwindcss build -i ./src/input.css -o ./src/output.css",
-    "watch-css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "dev": "concurrently \"npm run watch-css\" \"npm start\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "vite-plugin-ejs": "^1.7.0"
   }
 }
