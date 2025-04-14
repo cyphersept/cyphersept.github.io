@@ -349,6 +349,7 @@ main h1 {
 
 #projects h1 {
   width: 100%;
+  margin-bottom: -1rem;
 }
 
 .project {
@@ -529,6 +530,17 @@ main h1 {
   padding: 1rem;
   background-color: var(--black);
   border-radius: 0.5rem;
+}
+
+.blob .square,
+.blob label {
+  transition: transform 150ms ease-in-out;
+  will-change: transform;
+}
+
+.blob:hover .square,
+.blob:hover label {
+  transform: translateY(-1rem);
 }
 
 .blob img {
@@ -739,6 +751,7 @@ footer img {
     padding: var(--section-pad-x);
     translate: 0 1rem;
     font-size: 1.15em;
+    z-index: 5;
   }
 
   nav.floating {

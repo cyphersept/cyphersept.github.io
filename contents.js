@@ -24,7 +24,7 @@ const linkList = [
   },
   {
     label: "Site Code",
-    href: "https://www.github.com/cyphersept/monochrome-portfolio-template",
+    href: "https://www.github.com/cyphersept/monokoi-template",
     iconSrc: code,
   },
 ];
@@ -306,12 +306,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/monochrome-portfolio-template",
+        href: "https://www.github.com/cyphersept/monokoi-template",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/monochrome-portfolio-template/",
+        href: "https://www.cyphersept.github.io/monokoi-template/",
         iconSrc: link,
       },
     ],
