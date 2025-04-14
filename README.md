@@ -8,9 +8,9 @@ This portfolio currently uses my Monokoi design template, which is available as 
 
 ## Links
 
-**Live Site:** [http://www.cyphersept.github.io]()
+**Live Site:** [http://www.cyphersept.github.io](http://www.cyphersept.github.io)
 
-**Template:** [https://github.com/cyphersept/~~monokoi-template~~](https://github.com/cyphersept/monokoi-template)
+**Template:** [https://github.com/cyphersept/monokoi-template](https://github.com/cyphersept/monokoi-template)
 
 ## About
 
