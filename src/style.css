@@ -758,13 +758,9 @@ footer img {
     outline: none;
     background: none;
     padding: 0;
-    flex: auto;
     max-width: unset;
     margin-bottom: 11rem;
-  }
-
-  #about .hover-doodle {
-    display: none;
+    margin-right: calc(var(--section-pad-x) * 0.3755);
   }
 
   .carousel-wrapper {
@@ -813,6 +809,10 @@ footer img {
 
   #about h1 {
     margin-bottom: calc(var(--section-pad-y) - 0.5rem);
+  }
+
+  #about .hover-doodle {
+    display: none;
   }
 
   .burger {
