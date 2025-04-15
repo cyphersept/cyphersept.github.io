@@ -19,12 +19,12 @@ const linkList = [
   },
   {
     label: "Github",
-    href: "https://www.github.com/cyphersept",
+    href: "https://github.com/cyphersept",
     iconSrc: github,
   },
   {
     label: "Site Code",
-    href: "https://www.github.com/cyphersept/monokoi-template",
+    href: "https://github.com/cyphersept/cyphersept.github.io",
     iconSrc: code,
   },
 ];
@@ -85,18 +85,19 @@ const projectList = [
   {
     name: "Repalette",
     img: "./src/img/repalette-demo.gif",
-    imgAlt: "",
+    imgAlt:
+      "Pixel art colours above a list of palettes getting replaced in a single click",
     desc: "Lightning-fast and pixel-perfect palette swaps with bulk downloads.",
     stack: "Canvas API, File API, HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/repalette",
+        href: "https://github.com/cyphersept/repalette",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/repalette/",
+        href: "https://cyphersept.github.io/repalette/",
         iconSrc: link,
       },
     ],
@@ -104,18 +105,18 @@ const projectList = [
   {
     name: "Weather App",
     img: "./src/img/weather.webp",
-    imgAlt: "",
+    imgAlt: "Pink and blue neon urban street nightscape in rain",
     desc: "Cyberpunk weather updates",
     stack: "React, TailwindCSS, OpenMeteo API, Vite",
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/react-weather",
+        href: "https://github.com/cyphersept/react-weather",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyberpunk-weather.netlify.app/",
+        href: "https://cyberpunk-weather.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -129,12 +130,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/toast-dash",
+        href: "https://github.com/cyphersept/toast-dash",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.status-share-dash.netlify.app/",
+        href: "https://status-share-dash.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -149,12 +150,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/natural-cure",
+        href: "https://github.com/cyphersept/natural-cure",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.shop-natural-cure.netlify.app/",
+        href: "https://shop-natural-cure.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -169,12 +170,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/battleship",
+        href: "https://github.com/cyphersept/battleship",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/battleship/",
+        href: "https://cyphersept.github.io/battleship/",
         iconSrc: link,
       },
     ],
@@ -189,12 +190,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/memory-game",
+        href: "https://github.com/cyphersept/memory-game",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.flag-memory.netlify.app/",
+        href: "https://flag-memory.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -208,12 +209,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/cv-application",
+        href: "https://github.com/cyphersept/cv-application",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cypher-cv.netlify.app/",
+        href: "https://cypher-cv.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -228,12 +229,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/cardmaker",
+        href: "https://github.com/cyphersept/cardmaker",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/cardmaker/",
+        href: "https://cyphersept.github.io/cardmaker/",
         iconSrc: link,
       },
     ],
@@ -247,12 +248,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/signup-page",
+        href: "https://github.com/cyphersept/small-projects/tree/main/signup",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/signup-page",
+        href: "https://cyphersept.github.io/small-projects/signup",
         iconSrc: link,
       },
     ],
@@ -266,12 +267,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/dashboard-homepage",
+        href: "https://github.com/cyphersept/dashboard-template",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/dashboard-homepage/",
+        href: "https://cyphersept.github.io/dashboard-template/",
         iconSrc: link,
       },
     ],
@@ -286,12 +287,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/responsive-homepage",
+        href: "https://github.com/cyphersept/responsive-homepage",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/responsive-homepage/",
+        href: "https://cyphersept.github.io/responsive-homepage/",
         iconSrc: link,
       },
     ],
@@ -306,12 +307,12 @@ const projectList = [
     links: [
       {
         label: "repo",
-        href: "https://www.github.com/cyphersept/monokoi-template",
+        href: "https://github.com/cyphersept/monokoi-template",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://www.cyphersept.github.io/monokoi-template/",
+        href: "https://cyphersept.github.io/monokoi-template",
         iconSrc: link,
       },
     ],
