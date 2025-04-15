@@ -195,7 +195,7 @@ nav a:hover {
 
 header {
   padding: var(--section-pad-y) var(--section-pad-x);
-  padding-right: calc(var(--section-pad-x) - 0.5rem);
+  padding-right: calc(var(--section-pad-x) - 0.5rem - var(--b-width));
 }
 
 header .frame {
@@ -230,7 +230,7 @@ header .bg {
 
 main > section {
   padding: var(--section-pad-y) var(--section-pad-x);
-  padding-right: calc(var(--section-pad-x) - 0.5rem);
+  padding-right: calc(var(--section-pad-x) - 0.5rem - var(--b-width));
   min-height: 30rem;
 }
 
@@ -362,7 +362,7 @@ main h1 {
   display: flex;
   align-items: stretch;
   padding: 0;
-  height: 21rem;
+  min-height: 21rem;
   flex: 1 0 26rem;
 }
 
@@ -811,6 +811,10 @@ footer img {
     justify-content: end;
   }
 
+  #about h1 {
+    margin-bottom: calc(var(--section-pad-y) - 0.5rem);
+  }
+
   .burger {
     display: block;
   }
@@ -822,9 +826,15 @@ footer img {
   #contact .frame {
     flex-direction: column-reverse;
   }
+
   #contact .links {
     border-top: var(--b-width) var(--black) solid;
     border-right: none;
+    justify-content: space-evenly;
+  }
+
+  .credits {
+    margin-bottom: var(--section-pad-y);
   }
 }
 
@@ -833,9 +843,38 @@ footer img {
     font-size: 16px;
   }
 
+  #contact .credits,
+  #contact .links,
   .frame .contents {
-    padding: calc(var(--section-pad-x) * 0.675)
-      calc(var(--section-pad-x) * 0.75);
+    --min: 1.5rem;
+    padding: clamp(var(--min), 5%, calc(var(--section-pad-x) * 0.75));
+  }
+
+  .frame .contents {
+    --min: 0.5rem;
+  }
+
+  .project {
+    flex-shrink: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-pad-x: 2rem;
+  }
+
+  header .frame {
+    min-height: 60vh;
+    margin-top: 0.5rem;
+  }
+
+  .fish.d {
+    top: 2rem;
+  }
+
+  .fish.e {
+    display: none;
   }
 }
 
